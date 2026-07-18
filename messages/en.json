@@ -63,7 +63,16 @@
     "subtitle": "Browse our full catalog across math, science, languages, and humanities.",
     "comingSoon": "Course catalog coming soon",
     "body": "We're building out the course library. Check back shortly or get notified when it launches.",
-    "notify": "Notify me"
+    "notify": "Notify me",
+    "difficulty": {
+      "easy": "Easy",
+      "medium": "Medium",
+      "hard": "Hard"
+    },
+    "meta": {
+      "lessons": "lessons",
+      "minutes": "min"
+    }
   },
   "exams": {
     "title": "Exams",
@@ -411,6 +420,7 @@
     "nav": {
       "dashboard": "Dashboard",
       "categories": "Categories",
+      "courses": "Courses",
       "exams": "Exams",
       "questions": "Questions",
       "students": "Students",
@@ -620,6 +630,81 @@
       "score": "Score",
       "result": "Result",
       "date": "Date"
+    },
+    "coursesPage": {
+      "title": "Courses",
+      "subtitle": "Create and manage courses",
+      "newCourse": "New Course",
+      "noCourses": "No courses yet. Create one to get started.",
+      "lessonsCount": "lessons",
+      "publish": "Publish",
+      "unpublish": "Unpublish"
+    },
+    "coursesNew": {
+      "backToCourses": "Back to Courses",
+      "title": "Create New Course",
+      "subtitle": "Fill in the details below to create a new course"
+    },
+    "coursesEdit": {
+      "backToCourses": "Back to Courses",
+      "title": "Edit Course",
+      "subtitle": "Update the course details below"
+    },
+    "courseForm": {
+      "tabs": {
+        "basic": "Basic Info",
+        "lessons": "Lessons"
+      },
+      "basic": {
+        "title": "Basic Information",
+        "courseTitle": "Course Title *",
+        "titlePlaceholder": "e.g. Mathematics Basics",
+        "description": "Description",
+        "descriptionPlaceholder": "Optional description for the course...",
+        "category": "Category *",
+        "categoryPlaceholder": "Select category...",
+        "difficulty": "Difficulty *",
+        "thumbnail": "Thumbnail Image URL",
+        "thumbnailPlaceholder": "https://example.com/image.jpg"
+      },
+      "difficulty": {
+        "easy": "Easy",
+        "medium": "Medium",
+        "hard": "Hard"
+      },
+      "lessons": {
+        "title": "Lessons",
+        "addLesson": "Add Lesson",
+        "noLessons": "No lessons yet. Add lessons to this course.",
+        "lessonTitle": "Lesson Title *",
+        "lessonTitlePlaceholder": "e.g. Introduction to Algebra",
+        "lessonDescription": "Description",
+        "lessonDescriptionPlaceholder": "Brief description of this lesson...",
+        "lessonContent": "Content (URL or text)",
+        "lessonContentPlaceholder": "Video URL or lesson content...",
+        "lessonDuration": "Duration (minutes)",
+        "removeLesson": "Remove"
+      },
+      "validate": {
+        "titleRequired": "Title is required",
+        "categoryRequired": "Category is required"
+      },
+      "actions": {
+        "cancel": "Cancel",
+        "saveDraft": "Save as Draft",
+        "publish": "Publish Course"
+      }
+    },
+    "courseCategoriesPage": {
+      "title": "Course Categories",
+      "subtitle": "Manage course categories",
+      "newCategory": "New Category",
+      "name": "Name",
+      "description": "Description",
+      "createCategory": "Create Category",
+      "noCategories": "No categories yet. Create one above.",
+      "coursesCount": "courses",
+      "toggleStatus": "Toggle"
     },
     "settings": {
       "title": "Settings",

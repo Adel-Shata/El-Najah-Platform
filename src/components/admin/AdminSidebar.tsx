@@ -6,6 +6,7 @@ import {
   LayoutDashboard,
   FolderKanban,
   FileText,
+  BookOpen,
   HelpCircle,
   Users,
   BarChart3,
@@ -23,6 +24,7 @@ import { signOut } from "next-auth/react";
 const navigation = [
   { name: "nav.dashboard", href: "/admin", icon: LayoutDashboard },
   { name: "nav.categories", href: "/admin/categories", icon: FolderKanban },
+  { name: "nav.courses", href: "/admin/courses", icon: BookOpen },
   { name: "nav.exams", href: "/admin/exams", icon: FileText },
   { name: "nav.questions", href: "/admin/questions", icon: HelpCircle },
   { name: "nav.students", href: "/admin/students", icon: Users },

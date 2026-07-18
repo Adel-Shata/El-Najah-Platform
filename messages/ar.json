@@ -63,7 +63,16 @@
     "subtitle": "تصفح الكتالوج الكامل في الرياضيات والعلوم واللغات والعلوم الإنسانية.",
     "comingSoon": "كتالوج الدورات قادم قريباً",
     "body": "نعمل على بناء مكتبة الدورات. عُد قريباً أو اشعرنا برغبتك في معرفة موعد الإطلاق.",
-    "notify": "أعلمني"
+    "notify": "أعلمني",
+    "difficulty": {
+      "easy": "سهل",
+      "medium": "متوسط",
+      "hard": "صعب"
+    },
+    "meta": {
+      "lessons": "درس",
+      "minutes": "دقيقة"
+    }
   },
   "exams": {
     "title": "الاختبارات",
@@ -370,6 +379,7 @@
     "nav": {
       "dashboard": "لوحة التحكم",
       "categories": "الفئات",
+      "courses": "المقررات",
       "exams": "الاختبارات",
       "questions": "الأسئلة",
       "students": "الطلاب",
@@ -386,6 +396,81 @@
     "saved": "تم الحفظ!",
     "saveSettings": "حفظ الإعدادات",
     "enterWhatsAppFirst": "يرجى إدخال رقم واتساب أولاً",
+    "coursesPage": {
+      "title": "المقررات",
+      "subtitle": "إنشاء وإدارة المقررات",
+      "newCourse": "مقرر جديد",
+      "noCourses": "لا توجد مقررات بعد. أنشئ واحداً للبدء.",
+      "lessonsCount": "درس",
+      "publish": "نشر",
+      "unpublish": "إلغاء النشر"
+    },
+    "coursesNew": {
+      "backToCourses": "العودة للمقررات",
+      "title": "إنشاء مقرر جديد",
+      "subtitle": "املأ التفاصيل أدناه لإنشاء مقرر جديد"
+    },
+    "coursesEdit": {
+      "backToCourses": "العودة للمقررات",
+      "title": "تعديل المقرر",
+      "subtitle": "تحديث تفاصيل المقرر أدناه"
+    },
+    "courseForm": {
+      "tabs": {
+        "basic": "معلومات أساسية",
+        "lessons": "الدروس"
+      },
+      "basic": {
+        "title": "المعلومات الأساسية",
+        "courseTitle": "عنوان المقرر *",
+        "titlePlaceholder": "مثال: أساسيات الرياضيات",
+        "description": "الوصف",
+        "descriptionPlaceholder": "وصف اختياري للمقرر...",
+        "category": "الفئة *",
+        "categoryPlaceholder": "اختر فئة...",
+        "difficulty": "المستوى *",
+        "thumbnail": "رابط صورة المصغرة",
+        "thumbnailPlaceholder": "https://example.com/image.jpg"
+      },
+      "difficulty": {
+        "easy": "سهل",
+        "medium": "متوسط",
+        "hard": "صعب"
+      },
+      "lessons": {
+        "title": "الدروس",
+        "addLesson": "إضافة درس",
+        "noLessons": "لا توجد دروس بعد. أضف دروساً لهذا المقرر.",
+        "lessonTitle": "عنوان الدرس *",
+        "lessonTitlePlaceholder": "مثال: مقدمة في الجبر",
+        "lessonDescription": "الوصف",
+        "lessonDescriptionPlaceholder": "وصف مختصر لهذا الدرس...",
+        "lessonContent": "المحتوى (رابط أو نص)",
+        "lessonContentPlaceholder": "رابط فيديو أو محتوى الدرس...",
+        "lessonDuration": "المدة (دقيقة)",
+        "removeLesson": "إزالة"
+      },
+      "validate": {
+        "titleRequired": "العنوان مطلوب",
+        "categoryRequired": "الفئة مطلوبة"
+      },
+      "actions": {
+        "cancel": "إلغاء",
+        "saveDraft": "حفظ كمسودة",
+        "publish": "نشر المقرر"
+      }
+    },
+    "courseCategoriesPage": {
+      "title": "فئات المقررات",
+      "subtitle": "إدارة فئات المقررات",
+      "newCategory": "فئة جديدة",
+      "name": "الاسم",
+      "description": "الوصف",
+      "createCategory": "إنشاء فئة",
+      "noCategories": "لا توجد فئات بعد. أنشئ فئة أعلاه.",
+      "coursesCount": "مقرر",
+      "toggleStatus": "تبديل"
+    },
     "examsPage": {
       "title": "الاختبارات",
       "subtitle": "إنشاء وإدارة الاختبارات",

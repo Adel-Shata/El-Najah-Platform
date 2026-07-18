@@ -283,6 +283,54 @@ model PasswordReset {
   @@index([token])
 }
 
+model CourseCategory {
+  id          String   @id @default(cuid())
+  name        String
+  description String?
+  status      ExamCategoryStatus @default(ACTIVE)
+  sortOrder   Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  courses     Course[]
+
+  @@index([status, sortOrder])
+}
+
+model Course {
+  id           String   @id @default(cuid())
+  title        String
+  description  String?
+  categoryId   String
+  thumbnail    String?
+  difficulty   String   @default("MEDIUM")
+  status       ExamStatus @default(DRAFT)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  category     CourseCategory @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  lessons      CourseLesson[]
+
+  @@index([categoryId, status])
+  @@index([status])
+}
+
+model CourseLesson {
+  id              String   @id @default(cuid())
+  courseId         String
+  title           String
+  description     String?
+  content         String?  // Rich text content or video URL
+  durationMinutes Int      @default(0)
+  order           Int      @default(0)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  course          Course   @relation(fields: [courseId], references: [id], onDelete: Cascade)
+
+  @@index([courseId, order])
+}
+
 model AuditLog {
   id        String   @id @default(cuid())
   userId    String?
