@@ -670,8 +670,7 @@
         "or": "or",
         "autoDetected": "Duration detected: {duration}",
         "totalDuration": "Total Duration",
-        "uploading": "Uploading...",
-        "notesPlaceholder": "Additional notes for this lesson..."
+        "uploading": "Uploading..."
       },
       "validate": {
         "titleRequired": "Title is required",
@@ -682,7 +681,8 @@
         "cancel": "Cancel",
         "saveDraft": "Save as Draft",
         "publish": "Publish Course"
-      }
+      },
+      "notesPlaceholder": "Additional notes for this lesson..."
     },
     "settings": {
       "title": "Settings",

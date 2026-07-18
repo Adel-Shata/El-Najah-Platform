@@ -720,8 +720,7 @@
         "or": "أو",
         "autoDetected": "تم اكتشاف المدة: {duration}",
         "totalDuration": "المدة الإجمالية",
-        "uploading": "جارٍ التحميل...",
-        "notesPlaceholder": "ملاحظات إضافية لهذا الدرس..."
+        "uploading": "جارٍ التحميل..."
       },
       "validate": {
         "titleRequired": "العنوان مطلوب",
@@ -732,7 +731,8 @@
         "cancel": "إلغاء",
         "saveDraft": "حفظ كمسودة",
         "publish": "نشر الدورة"
-      }
+      },
+      "notesPlaceholder": "ملاحظات إضافية لهذا الدرس..."
     }
     }
   }
