@@ -48,7 +48,17 @@ export default async function LessonViewPage({
     return `${s}s`;
   };
 
-  const videoType = (lesson.videoType as "youtube" | "upload") || "upload";
+  // Auto-detect video type from URL if not set
+  let videoType: "youtube" | "upload" = "upload";
+  if (lesson.videoType === "youtube") {
+    videoType = "youtube";
+  } else if (lesson.videoType === "upload") {
+    videoType = "upload";
+  } else if (lesson.videoUrl) {
+    // Fallback: detect from URL pattern
+    const isYouTube = /(?:youtube\.com|youtu\.be)/.test(lesson.videoUrl);
+    videoType = isYouTube ? "youtube" : "upload";
+  }
 
   return (
     <section className="container-app py-24 md:py-32">
