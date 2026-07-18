@@ -3,7 +3,8 @@ import { prisma } from "@/lib/prisma";
 import { notFound } from "next/navigation";
 import { FadeIn } from "@/components/motion";
 import Link from "next/link";
-import { ArrowLeft, Clock, Play } from "lucide-react";
+import { ArrowLeft, Clock } from "lucide-react";
+import VideoPlayer from "@/components/VideoPlayer";
 
 export default async function LessonViewPage({
   params,
@@ -47,14 +48,7 @@ export default async function LessonViewPage({
     return `${s}s`;
   };
 
-  // Build YouTube embed URL
-  let youtubeEmbed = "";
-  if (lesson.videoType === "youtube" && lesson.videoUrl) {
-    const match = lesson.videoUrl.match(
-      /(?:youtube\.com\/(?:watch\?v=|embed\/|v\/|shorts\/)|youtu\.be\/)([a-zA-Z0-9_-]{11})/
-    );
-    if (match) youtubeEmbed = `https://www.youtube.com/embed/${match[1]}`;
-  }
+  const videoType = (lesson.videoType as "youtube" | "upload") || "upload";
 
   return (
     <section className="container-app py-24 md:py-32">
@@ -68,27 +62,13 @@ export default async function LessonViewPage({
         </Link>
 
         {/* Video player */}
-        {lesson.videoType === "youtube" && youtubeEmbed && (
-          <div className="mb-8 aspect-video rounded-2xl overflow-hidden border border-border">
-            <iframe
-              src={youtubeEmbed}
-              className="w-full h-full"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              title={lesson.title}
-            />
-          </div>
-        )}
-
-        {lesson.videoType === "upload" && lesson.videoUrl && (
-          <div className="mb-8 aspect-video rounded-2xl overflow-hidden border border-border bg-black">
-            <video
-              src={lesson.videoUrl}
-              controls
-              className="w-full h-full"
-              preload="metadata"
-            />
-          </div>
+        {lesson.videoUrl && (
+          <VideoPlayer
+            src={lesson.videoUrl}
+            type={videoType}
+            poster={course.thumbnail || undefined}
+            title={lesson.title}
+          />
         )}
 
         {/* Lesson info */}
