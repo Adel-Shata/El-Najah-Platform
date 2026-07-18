@@ -9,6 +9,7 @@ import { cn } from "@/lib/utils";
 
 export function UserMenu({ locale }: { locale: "en" | "ar" }) {
   const t = useTranslations("nav");
+  const tAdmin = useTranslations("admin");
   const { data: session, status } = useSession();
   const [open, setOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
@@ -49,6 +50,7 @@ export function UserMenu({ locale }: { locale: "en" | "ar" }) {
   }
 
   const user = session.user;
+  const isAdmin = user.role === "ADMIN";
   const initials = (user.name || user.email || "U")
     .split(" ")
     .map((w) => w[0])
@@ -86,12 +88,12 @@ export function UserMenu({ locale }: { locale: "en" | "ar" }) {
           </div>
 
           <Link
-            href="/dashboard"
+            href={isAdmin ? "/admin" : "/dashboard"}
             onClick={() => setOpen(false)}
             className="flex items-center gap-3 px-4 py-2.5 text-sm text-text hover:bg-bg transition-colors"
           >
             <LayoutDashboard className="size-4 text-text-muted" />
-            {t("dashboard")}
+            {isAdmin ? tAdmin("dashboard") : t("dashboard")}
           </Link>
 
           <button
@@ -112,6 +114,7 @@ export function UserMenu({ locale }: { locale: "en" | "ar" }) {
 
 export function UserMenuMobile({ locale }: { locale: "en" | "ar" }) {
   const t = useTranslations("nav");
+  const tAdmin = useTranslations("admin");
   const { data: session, status } = useSession();
 
   if (status === "loading" || !session?.user) {
@@ -133,13 +136,15 @@ export function UserMenuMobile({ locale }: { locale: "en" | "ar" }) {
     );
   }
 
+  const isAdmin = session.user.role === "ADMIN";
+
   return (
     <div className="flex flex-col gap-1 pt-3 mt-2 border-t border-border">
       <Link
-        href="/dashboard"
+        href={isAdmin ? "/admin" : "/dashboard"}
         className="px-3 py-3 text-sm rounded-md text-text-muted hover:text-text hover:bg-bg"
       >
-        {t("dashboard")}
+        {isAdmin ? tAdmin("dashboard") : t("dashboard")}
       </Link>
       <button
         onClick={() => signOut({ callbackUrl: `/${locale}` })}
