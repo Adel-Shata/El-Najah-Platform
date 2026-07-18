@@ -41,9 +41,7 @@ export default async function NewCoursePage({
         </p>
       </FadeIn>
 
-      <CreateCourseForm
-        locale={locale as "en" | "ar"}
-      />
+      <CreateCourseForm locale={locale as "en" | "ar"} />
     </div>
   );
 }

@@ -69,6 +69,20 @@
       "minutes": "دقيقة"
     }
   },
+  "courseDetail": {
+    "notFound": "الدورة غير موجودة",
+    "notFoundBody": "الدورة التي تبحث عنها غير موجودة أو لم تُنشر بعد.",
+    "backToCourses": "العودة للدورات",
+    "lessons": "الدروس",
+    "meta": {
+      "lessons": "درس"
+    }
+  },
+  "lessonView": {
+    "lesson": "درس",
+    "notes": "ملاحظات",
+    "backToCourse": "العودة للدورة"
+  },
   "exams": {
     "title": "الاختبارات",
     "subtitle": "تدرب في ظروف اختبار حقيقية مع تصحيح فوري.",
@@ -643,6 +657,97 @@
         "both": "كلاهما",
         "usernameWarning": "يجب على المستخدمين اختيار اسم مستخدم عند التسجيل. يمكن للمستخدمين الحاليين تسجيل الدخول بريدهم الإلكتروني حتى يقموا بتعيين اسم مستخدم."
       }
+    },
+    "coursesPage": {
+      "title": "الدورات",
+      "subtitle": "إنشاء وإدارة الدورات",
+      "newCourse": "دورة جديدة",
+      "noCourses": "لا توجد دورات بعد. أنشئ واحدة للبدء.",
+      "lessonsCount": "دروس",
+      "publish": "نشر",
+      "unpublish": "إلغاء النشر"
+    },
+    "coursesNew": {
+      "backToCourses": "العودة للدورات",
+      "title": "إنشاء دورة جديدة",
+      "subtitle": "املأ التفاصيل أدناه لإنشاء دورة جديدة"
+    },
+    "coursesEdit": {
+      "backToCourses": "العودة للدورات",
+      "title": "تعديل الدورة",
+      "subtitle": "تحديث تفاصيل الدورة أدناه"
+    },
+    "courseDetail": {
+      "backToCourses": "العودة للدورات",
+      "editCourse": "تعديل الدورة",
+      "lessons": "درس",
+      "lessonsList": "الدروس",
+      "noLessons": "لا توجد دروس بعد."
+    },
+    "courseForm": {
+      "tabs": {
+        "basic": "معلومات أساسية",
+        "lessons": "الدروس"
+      },
+      "basic": {
+        "title": "معلومات أساسية",
+        "courseTitle": "عنوان الدورة *",
+        "titlePlaceholder": "مثال: أساسيات الرياضيات",
+        "description": "الوصف",
+        "descriptionPlaceholder": "وصف اختياري للدورة...",
+        "thumbnail": "صورة المصغرة",
+        "thumbnailUpload": "انقر للتحميل أو اسحب وأفلت",
+        "thumbnailHint": "PNG, JPG, GIF حتى 5 ميجا. المقترح: 1280×720",
+        "youtubeUrl": "رابط فيديو يوتيوب",
+        "youtubeUrlPlaceholder": "https://www.youtube.com/watch?v=...",
+        "youtubeDurationDetected": "تم اكتشاف المدة: {duration}",
+        "videoUpload": "تحميل فيديو",
+        "videoUploadHint": "MP4, WebM حتى 200 ميجا",
+        "videoUploadButton": "انقر للتحميل أو اسحب وأفلت",
+        "youtubeInput": "رابط يوتيوب",
+        "youtubeInputPlaceholder": "https://www.youtube.com/watch?v=..."
+      },
+      "lessons": {
+        "title": "الدروس",
+        "addLesson": "إضافة درس",
+        "noLessons": "لا توجد دروس بعد. أضف دروساً لهذه الدورة.",
+        "lessonNumber": "درس {number}",
+        "lessonTitle": "عنوان الدرس *",
+        "lessonTitlePlaceholder": "مثال: مقدمة في الجبر",
+        "lessonDescription": "الوصف",
+        "lessonDescriptionPlaceholder": "وصف مختصر للدرس...",
+        "lessonContent": "المحتوى",
+        "lessonContentPlaceholder": "ملاحظات أو محتوى الدرس...",
+        "removeLesson": "إزالة",
+        "videoType": "نوع الفيديو",
+        "none": "بدون",
+        "youtube": "يوتيوب",
+        "upload": "تحميل",
+        "youtubeUrl": "رابط يوتيوب",
+        "youtubeUrlPlaceholder": "https://www.youtube.com/watch?v=...",
+        "autoDetect": "اكتشاف المدة تلقائياً",
+        "detecting": "جارٍ الاكتشاف...",
+        "durationDetected": "تم اكتشاف المدة: {duration}",
+        "durationFailed": "تعذر اكتشاف المدة. أدخلها يدوياً أدناه.",
+        "durationSeconds": "المدة (ثواني)",
+        "durationManual": "المدة (ثواني)",
+        "videoFile": "ملف الفيديو",
+        "dragDropVideo": "اسحب وأفلت فيديو هنا، أو انقر للتصفح",
+        "videoFormats": "MP4, WebM حتى 200 ميجا",
+        "uploading": "جارٍ التحميل...",
+        "uploadSuccess": "تم تحميل الفيديو بنجاح",
+        "uploadFailed": "فشل التحميل"
+      },
+      "validate": {
+        "titleRequired": "العنوان مطلوب"
+      },
+      "actions": {
+        "cancel": "إلغاء",
+        "saveDraft": "حفظ كمسودة",
+        "publish": "نشر الدورة",
+        "update": "تحديث الدورة"
+      }
+    }
     }
   }
 }

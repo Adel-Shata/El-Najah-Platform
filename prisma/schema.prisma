@@ -278,8 +278,11 @@ model CourseLesson {
   courseId         String
   title           String
   description     String?
-  content         String?  // Rich text content or video URL
+  content         String?  // Rich text content
+  videoUrl        String?  // YouTube URL or uploaded video path
+  videoType       String?  // "youtube" | "upload"
   durationMinutes Int      @default(0)
+  durationSeconds Int      @default(0) // Precise duration for videos
   order           Int      @default(0)
   createdAt       DateTime @default(now())
   updatedAt       DateTime @updatedAt

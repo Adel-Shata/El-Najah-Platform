@@ -4,7 +4,7 @@ import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
 import { FadeIn } from "@/components/motion";
 import Link from "next/link";
-import { Plus, Edit, Trash2, BookOpen, Eye, EyeOff } from "lucide-react";
+import { Plus, Edit, Trash2, BookOpen } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 
 export default async function AdminCoursesPage({
@@ -77,11 +77,20 @@ export default async function AdminCoursesPage({
             courses.map((course) => (
               <div key={course.id} className="flex items-center justify-between p-4 rounded-xl bg-surface border border-border">
                 <div className="flex items-center gap-4">
-                  <div className="p-2 rounded-lg bg-primary/10 text-primary">
-                    <BookOpen className="size-5" />
-                  </div>
+                  {course.thumbnail ? (
+                    <img src={course.thumbnail} alt="" className="w-12 h-12 rounded-lg object-cover" />
+                  ) : (
+                    <div className="p-2 rounded-lg bg-primary/10 text-primary">
+                      <BookOpen className="size-5" />
+                    </div>
+                  )}
                   <div>
-                    <p className="font-medium text-text">{course.title}</p>
+                    <Link
+                      href={`/${locale}/admin/courses/${course.id}`}
+                      className="font-medium text-text hover:text-primary transition-colors"
+                    >
+                      {course.title}
+                    </Link>
                     <p className="text-sm text-text-muted">
                       {course._count.lessons} {t("lessonsCount")}
                     </p>
@@ -96,6 +105,9 @@ export default async function AdminCoursesPage({
                       {course.status === "PUBLISHED" ? t("unpublish") : t("publish")}
                     </button>
                   </form>
+                  <Link href={`/${locale}/admin/courses/${course.id}`} className="p-2 rounded-lg text-text-muted hover:text-primary hover:bg-primary/10 transition-colors">
+                    <BookOpen className="size-4" />
+                  </Link>
                   <Link href={`/${locale}/admin/courses/${course.id}/edit`} className="p-2 rounded-lg text-text-muted hover:text-primary hover:bg-primary/10 transition-colors">
                     <Edit className="size-4" />
                   </Link>

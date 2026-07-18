@@ -69,6 +69,20 @@
       "minutes": "min"
     }
   },
+  "courseDetail": {
+    "notFound": "Course not found",
+    "notFoundBody": "The course you are looking for does not exist or is not published yet.",
+    "backToCourses": "Back to Courses",
+    "lessons": "Lessons",
+    "meta": {
+      "lessons": "lessons"
+    }
+  },
+  "lessonView": {
+    "lesson": "Lesson",
+    "notes": "Notes",
+    "backToCourse": "Back to Course"
+  },
   "exams": {
     "title": "Exams",
     "subtitle": "Practice under real exam conditions with instant grading.",
@@ -613,6 +627,13 @@
       "title": "Edit Course",
       "subtitle": "Update the course details below"
     },
+    "courseDetail": {
+      "backToCourses": "Back to Courses",
+      "editCourse": "Edit Course",
+      "lessons": "lessons",
+      "lessonsList": "Lessons",
+      "noLessons": "No lessons yet."
+    },
     "courseForm": {
       "tabs": {
         "basic": "Basic Info",
@@ -624,21 +645,48 @@
         "titlePlaceholder": "e.g. Mathematics Basics",
         "description": "Description",
         "descriptionPlaceholder": "Optional description for the course...",
-        "thumbnail": "Thumbnail Image URL",
-        "thumbnailPlaceholder": "https://example.com/image.jpg"
+        "thumbnail": "Thumbnail Image",
+        "thumbnailUpload": "Click to upload or drag & drop",
+        "thumbnailHint": "PNG, JPG, GIF up to 5MB. Recommended: 1280×720",
+        "youtubeUrl": "YouTube Video URL",
+        "youtubeUrlPlaceholder": "https://www.youtube.com/watch?v=...",
+        "youtubeDurationDetected": "Duration detected: {duration}",
+        "videoUpload": "Upload Video",
+        "videoUploadHint": "MP4, WebM up to 200MB",
+        "videoUploadButton": "Click to upload or drag & drop",
+        "youtubeInput": "YouTube URL",
+        "youtubeInputPlaceholder": "https://www.youtube.com/watch?v=..."
       },
       "lessons": {
         "title": "Lessons",
         "addLesson": "Add Lesson",
         "noLessons": "No lessons yet. Add lessons to this course.",
+        "lessonNumber": "Lesson {number}",
         "lessonTitle": "Lesson Title *",
         "lessonTitlePlaceholder": "e.g. Introduction to Algebra",
         "lessonDescription": "Description",
         "lessonDescriptionPlaceholder": "Brief description of this lesson...",
-        "lessonContent": "Content (URL or text)",
-        "lessonContentPlaceholder": "Video URL or lesson content...",
-        "lessonDuration": "Duration (minutes)",
-        "removeLesson": "Remove"
+        "lessonContent": "Content",
+        "lessonContentPlaceholder": "Notes or lesson content...",
+        "removeLesson": "Remove",
+        "videoType": "Video Type",
+        "none": "None",
+        "youtube": "YouTube",
+        "upload": "Upload",
+        "youtubeUrl": "YouTube URL",
+        "youtubeUrlPlaceholder": "https://www.youtube.com/watch?v=...",
+        "autoDetect": "Auto-detect duration",
+        "detecting": "Detecting...",
+        "durationDetected": "Duration detected: {duration}",
+        "durationFailed": "Could not detect duration. Enter manually below.",
+        "durationSeconds": "Duration (seconds)",
+        "durationManual": "Duration (seconds)",
+        "videoFile": "Video File",
+        "dragDropVideo": "Drag & drop a video here, or click to browse",
+        "videoFormats": "MP4, WebM up to 200MB",
+        "uploading": "Uploading...",
+        "uploadSuccess": "Video uploaded successfully",
+        "uploadFailed": "Upload failed"
       },
       "validate": {
         "titleRequired": "Title is required"
@@ -646,7 +694,8 @@
       "actions": {
         "cancel": "Cancel",
         "saveDraft": "Save as Draft",
-        "publish": "Publish Course"
+        "publish": "Publish Course",
+        "update": "Update Course"
       }
     },
     "settings": {

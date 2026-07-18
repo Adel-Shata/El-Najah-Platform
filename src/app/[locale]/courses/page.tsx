@@ -2,6 +2,7 @@ import { setRequestLocale, getTranslations } from "next-intl/server";
 import { prisma } from "@/lib/prisma";
 import { FadeIn } from "@/components/motion";
 import { BookOpen, Clock } from "lucide-react";
+import Link from "next/link";
 
 export default async function CoursesPage({
   params,
@@ -48,22 +49,27 @@ export default async function CoursesPage({
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {courses.map((course, i) => (
             <FadeIn key={course.id} delay={i * 0.05}>
-              <div className="p-6 rounded-2xl border border-border bg-surface hover:border-primary/30 transition-colors h-full flex flex-col">
-                <div className="flex items-center gap-2 mb-3">
-                  <div className="p-1.5 rounded-md bg-primary/10 text-primary">
-                    <BookOpen className="size-4" />
+              <Link
+                href={`/${locale}/courses/${course.id}`}
+                className="block p-6 rounded-2xl border border-border bg-surface hover:border-primary/30 transition-colors h-full flex flex-col"
+              >
+                {course.thumbnail ? (
+                  <div className="mb-4 rounded-xl overflow-hidden border border-border">
+                    <img src={course.thumbnail} alt={course.title} className="w-full h-40 object-cover" />
                   </div>
-                </div>
+                ) : (
+                  <div className="mb-4 flex items-center justify-center h-40 rounded-xl bg-bg border border-border">
+                    <BookOpen className="size-10 text-text-muted" />
+                  </div>
+                )}
                 <h3 className="text-lg font-semibold text-text mb-2">{course.title}</h3>
                 {course.description && (
                   <p className="text-sm text-text-muted leading-relaxed mb-4 line-clamp-2">{course.description}</p>
                 )}
                 <div className="mt-auto flex items-center gap-4 text-xs text-text-muted">
-                  <span className="inline-flex items-center gap-1">
-                    <Clock className="size-3" /> {course._count.lessons} {t("meta.lessons")}
-                  </span>
+                  <span>{course._count.lessons} {t("meta.lessons")}</span>
                 </div>
-              </div>
+              </Link>
             </FadeIn>
           ))}
         </div>

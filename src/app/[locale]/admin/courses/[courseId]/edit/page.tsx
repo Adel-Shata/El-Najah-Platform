@@ -3,7 +3,7 @@ import { prisma } from "@/lib/prisma";
 import { auth } from "@/auth";
 import { redirect, notFound } from "next/navigation";
 import { FadeIn } from "@/components/motion";
-import { EditCourseForm } from "@/components/admin/EditCourseForm";
+import { CreateCourseForm } from "@/components/admin/CreateCourseForm";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 
@@ -25,7 +25,6 @@ export default async function EditCoursePage({
   const t = await getTranslations({ locale, namespace: "admin.coursesEdit" });
 
   let course: any = null;
-
   try {
     course = await prisma.course.findUnique({
       where: { id: courseId },
@@ -33,9 +32,7 @@ export default async function EditCoursePage({
         lessons: { orderBy: { order: "asc" } },
       },
     });
-  } catch {
-    // keep defaults
-  }
+  } catch {}
 
   if (!course) notFound();
 
@@ -56,10 +53,7 @@ export default async function EditCoursePage({
         </p>
       </FadeIn>
 
-      <EditCourseForm
-        locale={locale as "en" | "ar"}
-        course={course}
-      />
+      <CreateCourseForm locale={locale as "en" | "ar"} course={course} />
     </div>
   );
 }
