@@ -64,11 +64,6 @@
     "comingSoon": "Course catalog coming soon",
     "body": "We're building out the course library. Check back shortly or get notified when it launches.",
     "notify": "Notify me",
-    "difficulty": {
-      "easy": "Easy",
-      "medium": "Medium",
-      "hard": "Hard"
-    },
     "meta": {
       "lessons": "lessons",
       "minutes": "min"
@@ -629,16 +624,8 @@
         "titlePlaceholder": "e.g. Mathematics Basics",
         "description": "Description",
         "descriptionPlaceholder": "Optional description for the course...",
-        "category": "Category *",
-        "categoryPlaceholder": "Select category...",
-        "difficulty": "Difficulty *",
         "thumbnail": "Thumbnail Image URL",
         "thumbnailPlaceholder": "https://example.com/image.jpg"
-      },
-      "difficulty": {
-        "easy": "Easy",
-        "medium": "Medium",
-        "hard": "Hard"
       },
       "lessons": {
         "title": "Lessons",
@@ -654,25 +641,13 @@
         "removeLesson": "Remove"
       },
       "validate": {
-        "titleRequired": "Title is required",
-        "categoryRequired": "Category is required"
+        "titleRequired": "Title is required"
       },
       "actions": {
         "cancel": "Cancel",
         "saveDraft": "Save as Draft",
         "publish": "Publish Course"
       }
-    },
-    "courseCategoriesPage": {
-      "title": "Course Categories",
-      "subtitle": "Manage course categories",
-      "newCategory": "New Category",
-      "name": "Name",
-      "description": "Description",
-      "createCategory": "Create Category",
-      "noCategories": "No categories yet. Create one above.",
-      "coursesCount": "courses",
-      "toggleStatus": "Toggle"
     },
     "settings": {
       "title": "Settings",

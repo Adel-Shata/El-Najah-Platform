@@ -15,10 +15,9 @@ interface Lesson {
 
 interface CreateCourseFormProps {
   locale: "en" | "ar";
-  categories: { id: string; name: string }[];
 }
 
-export function CreateCourseForm({ locale, categories }: CreateCourseFormProps) {
+export function CreateCourseForm({ locale }: CreateCourseFormProps) {
   const router = useRouter();
   const t = useTranslations("admin.courseForm");
   const [saving, setSaving] = useState(false);
@@ -44,9 +43,8 @@ export function CreateCourseForm({ locale, categories }: CreateCourseFormProps) 
     const formData = new FormData(form);
 
     const title = formData.get("title") as string;
-    const categoryId = formData.get("categoryId") as string;
 
-    if (!title || !categoryId) {
+    if (!title) {
       alert(t("validate.titleRequired"));
       return;
     }
@@ -59,8 +57,6 @@ export function CreateCourseForm({ locale, categories }: CreateCourseFormProps) 
         body: JSON.stringify({
           title,
           description: formData.get("description") || null,
-          categoryId,
-          difficulty: formData.get("difficulty") || "MEDIUM",
           thumbnail: formData.get("thumbnail") || null,
           status,
           lessons,
@@ -126,31 +122,6 @@ export function CreateCourseForm({ locale, categories }: CreateCourseFormProps) 
                 placeholder={t("basic.descriptionPlaceholder")}
                 className="w-full px-3 py-2 text-sm rounded-lg border border-border bg-bg text-text resize-none"
               />
-            </div>
-
-            <div className="grid gap-4 md:grid-cols-2">
-              <div>
-                <label className="block text-sm font-medium text-text-muted mb-1">{t("basic.category")}</label>
-                <select
-                  name="categoryId"
-                  required
-                  className="w-full h-10 px-3 text-sm rounded-lg border border-border bg-bg text-text"
-                >
-                  <option value="">{t("basic.categoryPlaceholder")}</option>
-                  {categories.map((cat) => (
-                    <option key={cat.id} value={cat.id}>{cat.name}</option>
-                  ))}
-                </select>
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-text-muted mb-1">{t("basic.difficulty")}</label>
-                <select name="difficulty" className="w-full h-10 px-3 text-sm rounded-lg border border-border bg-bg text-text">
-                  <option value="EASY">{t("difficulty.easy")}</option>
-                  <option value="MEDIUM">{t("difficulty.medium")}</option>
-                  <option value="HARD">{t("difficulty.hard")}</option>
-                </select>
-              </div>
             </div>
 
             <div>

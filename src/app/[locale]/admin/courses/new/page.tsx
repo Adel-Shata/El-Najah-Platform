@@ -24,16 +24,6 @@ export default async function NewCoursePage({
 
   const t = await getTranslations({ locale, namespace: "admin.coursesNew" });
 
-  let categories: any[] = [];
-  try {
-    categories = await prisma.courseCategory.findMany({
-      where: { status: "ACTIVE" },
-      orderBy: { sortOrder: "asc" },
-    });
-  } catch {
-    // keep defaults
-  }
-
   return (
     <div className="container-app py-8">
       <FadeIn className="mb-8">
@@ -53,7 +43,6 @@ export default async function NewCoursePage({
 
       <CreateCourseForm
         locale={locale as "en" | "ar"}
-        categories={categories}
       />
     </div>
   );

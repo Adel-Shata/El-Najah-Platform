@@ -17,10 +17,10 @@ export async function PUT(
 
   const { courseId } = await params;
   const body = await req.json();
-  const { title, description, categoryId, difficulty, thumbnail, status, lessons } = body;
+  const { title, description, thumbnail, status, lessons } = body;
 
-  if (!title || !categoryId) {
-    return NextResponse.json({ error: "Title and category required" }, { status: 400 });
+  if (!title) {
+    return NextResponse.json({ error: "Title required" }, { status: 400 });
   }
 
   // Delete existing lessons and recreate
@@ -31,8 +31,6 @@ export async function PUT(
     data: {
       title,
       description,
-      categoryId,
-      difficulty: difficulty || "MEDIUM",
       thumbnail,
       status: status || "DRAFT",
       lessons: {

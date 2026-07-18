@@ -259,40 +259,17 @@ model PasswordReset {
   @@index([token])
 }
 
-enum CourseCategoryStatus {
-  ACTIVE
-  INACTIVE
-}
-
-model CourseCategory {
-  id          String   @id @default(cuid())
-  name        String
-  description String?
-  status      CourseCategoryStatus @default(ACTIVE)
-  sortOrder   Int      @default(0)
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-
-  courses     Course[]
-
-  @@index([sortOrder])
-}
-
 model Course {
   id           String   @id @default(cuid())
   title        String
   description  String?
-  categoryId   String
   thumbnail    String?
-  difficulty   String   @default("MEDIUM")
   status       ExamStatus @default(DRAFT)
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
 
-  category     CourseCategory @relation(fields: [categoryId], references: [id], onDelete: Cascade)
   lessons      CourseLesson[]
 
-  @@index([categoryId, status])
   @@index([status])
 }
 

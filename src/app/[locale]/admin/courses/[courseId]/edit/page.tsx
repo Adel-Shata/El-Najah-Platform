@@ -25,21 +25,14 @@ export default async function EditCoursePage({
   const t = await getTranslations({ locale, namespace: "admin.coursesEdit" });
 
   let course: any = null;
-  let categories: any[] = [];
 
   try {
-    [course, categories] = await Promise.all([
-      prisma.course.findUnique({
-        where: { id: courseId },
-        include: {
-          lessons: { orderBy: { order: "asc" } },
-        },
-      }),
-      prisma.courseCategory.findMany({
-        where: { status: "ACTIVE" },
-        orderBy: { sortOrder: "asc" },
-      }),
-    ]);
+    course = await prisma.course.findUnique({
+      where: { id: courseId },
+      include: {
+        lessons: { orderBy: { order: "asc" } },
+      },
+    });
   } catch {
     // keep defaults
   }
@@ -66,7 +59,6 @@ export default async function EditCoursePage({
       <EditCourseForm
         locale={locale as "en" | "ar"}
         course={course}
-        categories={categories}
       />
     </div>
   );

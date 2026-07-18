@@ -64,11 +64,6 @@
     "comingSoon": "كتالوج الدورات قادم قريباً",
     "body": "نعمل على بناء مكتبة الدورات. عُد قريباً أو اشعرنا برغبتك في معرفة موعد الإطلاق.",
     "notify": "أعلمني",
-    "difficulty": {
-      "easy": "سهل",
-      "medium": "متوسط",
-      "hard": "صعب"
-    },
     "meta": {
       "lessons": "درس",
       "minutes": "دقيقة"
@@ -414,16 +409,8 @@
         "titlePlaceholder": "مثال: أساسيات الرياضيات",
         "description": "الوصف",
         "descriptionPlaceholder": "وصف اختياري للمقرر...",
-        "category": "الفئة *",
-        "categoryPlaceholder": "اختر فئة...",
-        "difficulty": "المستوى *",
         "thumbnail": "رابط صورة المصغرة",
         "thumbnailPlaceholder": "https://example.com/image.jpg"
-      },
-      "difficulty": {
-        "easy": "سهل",
-        "medium": "متوسط",
-        "hard": "صعب"
       },
       "lessons": {
         "title": "الدروس",
@@ -439,25 +426,13 @@
         "removeLesson": "إزالة"
       },
       "validate": {
-        "titleRequired": "العنوان مطلوب",
-        "categoryRequired": "الفئة مطلوبة"
+        "titleRequired": "العنوان مطلوب"
       },
       "actions": {
         "cancel": "إلغاء",
         "saveDraft": "حفظ كمسودة",
         "publish": "نشر المقرر"
       }
-    },
-    "courseCategoriesPage": {
-      "title": "فئات المقررات",
-      "subtitle": "إدارة فئات المقررات",
-      "newCategory": "فئة جديدة",
-      "name": "الاسم",
-      "description": "الوصف",
-      "createCategory": "إنشاء فئة",
-      "noCategories": "لا توجد فئات بعد. أنشئ فئة أعلاه.",
-      "coursesCount": "مقرر",
-      "toggleStatus": "تبديل"
     },
     "examsPage": {
       "title": "الاختبارات",

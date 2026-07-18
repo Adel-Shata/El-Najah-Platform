@@ -1,8 +1,7 @@
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { prisma } from "@/lib/prisma";
 import { FadeIn } from "@/components/motion";
-import { BookOpen, Clock, BarChart3 } from "lucide-react";
-import Link from "next/link";
+import { BookOpen, Clock } from "lucide-react";
 
 export default async function CoursesPage({
   params,
@@ -18,7 +17,6 @@ export default async function CoursesPage({
     courses = await prisma.course.findMany({
       where: { status: "PUBLISHED" },
       include: {
-        category: { select: { name: true } },
         _count: { select: { lessons: true } },
       },
       orderBy: { createdAt: "desc" },
@@ -26,12 +24,6 @@ export default async function CoursesPage({
   } catch {
     courses = [];
   }
-
-  const difficultyLabel = (d: string) => {
-    if (d === "EASY") return t("difficulty.easy");
-    if (d === "HARD") return t("difficulty.hard");
-    return t("difficulty.medium");
-  };
 
   return (
     <section className="container-app py-24 md:py-32">
@@ -61,7 +53,6 @@ export default async function CoursesPage({
                   <div className="p-1.5 rounded-md bg-primary/10 text-primary">
                     <BookOpen className="size-4" />
                   </div>
-                  <span className="text-xs font-medium text-text-muted">{course.category?.name}</span>
                 </div>
                 <h3 className="text-lg font-semibold text-text mb-2">{course.title}</h3>
                 {course.description && (
@@ -70,9 +61,6 @@ export default async function CoursesPage({
                 <div className="mt-auto flex items-center gap-4 text-xs text-text-muted">
                   <span className="inline-flex items-center gap-1">
                     <Clock className="size-3" /> {course._count.lessons} {t("meta.lessons")}
-                  </span>
-                  <span className="inline-flex items-center gap-1">
-                    <BarChart3 className="size-3" /> {difficultyLabel(course.difficulty)}
                   </span>
                 </div>
               </div>
