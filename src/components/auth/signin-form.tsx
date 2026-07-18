@@ -6,16 +6,14 @@ import { useSearchParams } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { signIn } from "next-auth/react";
 import { Eye, EyeOff, Loader2, AlertCircle } from "lucide-react";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import { FadeIn } from "@/components/motion";
 import { cn } from "@/lib/utils";
-import { useParams } from "next/navigation";
 
 export function SignInForm() {
   const t = useTranslations("auth.signin");
   const router = useRouter();
   const searchParams = useSearchParams();
-  const params = useParams();
   const [isPending, startTransition] = useTransition();
 
   const [loginType, setLoginType] = useState<"email" | "username">("email");
@@ -26,7 +24,6 @@ export function SignInForm() {
   const [attempted, setAttempted] = useState(false);
 
   const callbackUrl = searchParams.get("callbackUrl") || "/dashboard";
-  const locale = (params?.locale as string) || "en";
 
   function handleIdentifierChange(e: React.ChangeEvent<HTMLInputElement>) {
     setIdentifier(e.target.value);
@@ -64,9 +61,10 @@ export function SignInForm() {
         const session = await sessionRes.json();
         const role = session?.user?.role;
         if (role === "ADMIN") {
-          router.push(`/${locale}/admin`);
+          router.push("/admin");
         } else {
-          router.push(callbackUrl);
+          const cleanUrl = callbackUrl.replace(/^\/(en|ar)/, "") || "/dashboard";
+          router.push(cleanUrl);
         }
         router.refresh();
       }
@@ -144,7 +142,7 @@ export function SignInForm() {
           <label htmlFor="password" className="block text-sm font-medium text-text">
             {t("password")}
           </label>
-          <Link href={`/${locale}/auth/forgot-password`} className="text-sm text-primary hover:text-primary-hover transition-colors">
+          <Link href="/auth/forgot-password" className="text-sm text-primary hover:text-primary-hover transition-colors">
             {t("forgotPassword")}
           </Link>
         </div>
