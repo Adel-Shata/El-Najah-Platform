@@ -685,6 +685,8 @@
       "noLessons": "لا توجد دروس بعد."
     },
     "courseForm": {
+      "DRAFT": "مسودة",
+      "PUBLISHED": "منشور",
       "tabs": {
         "basic": "معلومات أساسية",
         "lessons": "الدروس"
@@ -696,56 +698,40 @@
         "description": "الوصف",
         "descriptionPlaceholder": "وصف اختياري للدورة...",
         "thumbnail": "صورة المصغرة",
-        "thumbnailUpload": "انقر للتحميل أو اسحب وأفلت",
-        "thumbnailHint": "PNG, JPG, GIF حتى 5 ميجا. المقترح: 1280×720",
-        "youtubeUrl": "رابط فيديو يوتيوب",
-        "youtubeUrlPlaceholder": "https://www.youtube.com/watch?v=...",
-        "youtubeDurationDetected": "تم اكتشاف المدة: {duration}",
-        "videoUpload": "تحميل فيديو",
-        "videoUploadHint": "MP4, WebM حتى 200 ميجا",
-        "videoUploadButton": "انقر للتحميل أو اسحب وأفلت",
-        "youtubeInput": "رابط يوتيوب",
-        "youtubeInputPlaceholder": "https://www.youtube.com/watch?v=..."
+        "uploadThumbnail": "انقر للتحميل أو اسحب وأفلت",
+        "thumbnailHint": "PNG, JPG, GIF حتى 5 ميجا. المقترح: 1280×720"
       },
       "lessons": {
         "title": "الدروس",
         "addLesson": "إضافة درس",
         "noLessons": "لا توجد دروس بعد. أضف دروساً لهذه الدورة.",
-        "lessonNumber": "درس {number}",
         "lessonTitle": "عنوان الدرس *",
         "lessonTitlePlaceholder": "مثال: مقدمة في الجبر",
         "lessonDescription": "الوصف",
         "lessonDescriptionPlaceholder": "وصف مختصر للدرس...",
         "lessonContent": "المحتوى",
         "lessonContentPlaceholder": "ملاحظات أو محتوى الدرس...",
+        "lessonDuration": "المدة (ثواني)",
         "removeLesson": "إزالة",
-        "videoType": "نوع الفيديو",
-        "none": "بدون",
-        "youtube": "يوتيوب",
-        "upload": "تحميل",
+        "video": "فيديو",
+        "uploadVideo": "تحميل فيديو",
         "youtubeUrl": "رابط يوتيوب",
         "youtubeUrlPlaceholder": "https://www.youtube.com/watch?v=...",
-        "autoDetect": "اكتشاف المدة تلقائياً",
-        "detecting": "جارٍ الاكتشاف...",
-        "durationDetected": "تم اكتشاف المدة: {duration}",
-        "durationFailed": "تعذر اكتشاف المدة. أدخلها يدوياً أدناه.",
-        "durationSeconds": "المدة (ثواني)",
-        "durationManual": "المدة (ثواني)",
-        "videoFile": "ملف الفيديو",
-        "dragDropVideo": "اسحب وأفلت فيديو هنا، أو انقر للتصفح",
-        "videoFormats": "MP4, WebM حتى 200 ميجا",
+        "or": "أو",
+        "autoDetected": "تم اكتشاف المدة: {duration}",
+        "totalDuration": "المدة الإجمالية",
         "uploading": "جارٍ التحميل...",
-        "uploadSuccess": "تم تحميل الفيديو بنجاح",
-        "uploadFailed": "فشل التحميل"
+        "notesPlaceholder": "ملاحظات إضافية لهذا الدرس..."
       },
       "validate": {
-        "titleRequired": "العنوان مطلوب"
+        "titleRequired": "العنوان مطلوب",
+        "lessonTitleRequired": "عنوان الدرس مطلوب",
+        "lessonsRequired": "درس واحد على الأقل مطلوب"
       },
       "actions": {
         "cancel": "إلغاء",
         "saveDraft": "حفظ كمسودة",
-        "publish": "نشر الدورة",
-        "update": "تحديث الدورة"
+        "publish": "نشر الدورة"
       }
     }
     }
