@@ -83,7 +83,6 @@ export default async function AdminStudentsPage({
                     <th className="text-left px-4 py-3 font-medium text-text-muted">{t("student")}</th>
                     <th className="text-left px-4 py-3 font-medium text-text-muted hidden md:table-cell">{t("email")}</th>
                     <th className="text-left px-4 py-3 font-medium text-text-muted hidden lg:table-cell">{t("username")}</th>
-                    <th className="text-center px-4 py-3 font-medium text-text-muted hidden lg:table-cell">{t("password")}</th>
                     <th className="text-left px-4 py-3 font-medium text-text-muted hidden lg:table-cell">{t("joined")}</th>
                     <th className="text-center px-4 py-3 font-medium text-text-muted">{t("attempts")}</th>
                     <th className="text-center px-4 py-3 font-medium text-text-muted">{t("payments")}</th>
@@ -113,11 +112,6 @@ export default async function AdminStudentsPage({
                         </td>
                         <td className="px-4 py-3 text-text-muted hidden lg:table-cell">
                           <span className="truncate">{student.username || "—"}</span>
-                        </td>
-                        <td className="px-4 py-3 text-center hidden lg:table-cell">
-                          <span className={`px-2 py-1 rounded-full text-xs font-medium ${student.passwordHash ? "bg-emerald-100 text-emerald-700" : "bg-gray-100 text-gray-500"}`}>
-                            {student.passwordHash ? t("hasPassword") : t("noPassword")}
-                          </span>
                         </td>
                         <td className="px-4 py-3 text-text-muted hidden lg:table-cell">
                           <div className="flex items-center gap-1.5">
