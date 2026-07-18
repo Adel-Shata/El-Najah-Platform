@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 
 interface VideoPlayerProps {
   src?: string;
@@ -18,8 +18,6 @@ function extractYouTubeId(url: string): string | null {
 
 /* ── YouTube player ── */
 function YouTubePlayer({ videoId, title }: { videoId: string; title?: string }) {
-  const [loadError, setLoadError] = useState(false);
-
   return (
     <div style={{ marginBottom: "2rem", width: "100%" }}>
       <div
@@ -28,8 +26,6 @@ function YouTubePlayer({ videoId, title }: { videoId: string; title?: string }) 
           width: "100%",
           paddingBottom: "56.25%",
           borderRadius: "1rem",
-          overflow: "hidden",
-          background: "#000",
           border: "1px solid var(--border, #e5e5e5)",
         }}
       >
@@ -42,29 +38,12 @@ function YouTubePlayer({ videoId, title }: { videoId: string; title?: string }) 
             width: "100%",
             height: "100%",
             border: "none",
+            borderRadius: "1rem",
           }}
           title={title || "YouTube video"}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowFullScreen
-          onLoad={() => {}}
-          onError={() => setLoadError(true)}
         />
-        {loadError && (
-          <div
-            style={{
-              position: "absolute",
-              inset: 0,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              color: "#fff",
-              fontSize: "14px",
-              background: "#000",
-            }}
-          >
-            Failed to load video.
-          </div>
-        )}
       </div>
     </div>
   );
