@@ -25,10 +25,11 @@ export default function VideoPlayer({ src, type, poster, title }: VideoPlayerPro
     const videoId = extractYouTubeId(src);
     if (!videoId) return null;
     return (
-      <div className="mb-8 aspect-video rounded-2xl overflow-hidden border border-border">
+      <div className="mb-8 relative w-full" style={{ paddingTop: "56.25%" }}>
         <iframe
-          src={`https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1`}
-          className="w-full h-full"
+          src={`https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1&controls=1&fs=1&iv_load_policy=3&cc_load_policy=1&playsinline=1`}
+          className="absolute inset-0 w-full h-full rounded-2xl border border-border"
+          style={{ border: 0 }}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowFullScreen
           title={title || "YouTube video"}
