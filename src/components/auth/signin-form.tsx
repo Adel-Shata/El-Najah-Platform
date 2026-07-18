@@ -60,7 +60,14 @@ export function SignInForm() {
       if (result?.error) {
         setError(t("invalidCredentials"));
       } else {
-        router.push(callbackUrl);
+        const sessionRes = await fetch("/api/auth/session");
+        const session = await sessionRes.json();
+        const role = session?.user?.role;
+        if (role === "ADMIN") {
+          router.push(`/${locale}/admin`);
+        } else {
+          router.push(callbackUrl);
+        }
         router.refresh();
       }
     });
