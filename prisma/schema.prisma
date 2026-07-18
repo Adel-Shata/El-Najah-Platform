@@ -1,0 +1,300 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum UserRole {
+  STUDENT
+  ADMIN
+}
+
+enum UserStatus {
+  ACTIVE
+  SUSPENDED
+  PENDING_VERIFICATION
+}
+
+enum ExamCategoryStatus {
+  ACTIVE
+  INACTIVE
+}
+
+enum ExamStatus {
+  DRAFT
+  PUBLISHED
+  ARCHIVED
+}
+
+enum QuestionType {
+  MCQ_SINGLE
+  MCQ_MULTIPLE
+  TRUE_FALSE
+  SHORT_ANSWER
+  NUMERICAL
+}
+
+enum AttemptStatus {
+  IN_PROGRESS
+  SUBMITTED
+  GRADED
+  EXPIRED
+}
+
+enum PaymentStatus {
+  PENDING
+  COMPLETED
+  FAILED
+  REFUNDED
+}
+
+enum PaymentPackage {
+  TWO_ATTEMPTS
+  FOUR_ATTEMPTS
+}
+
+model User {
+  id            String    @id @default(cuid())
+  email         String    @unique
+  username      String?   @unique
+  passwordHash  String
+  name          String
+  role          UserRole  @default(STUDENT)
+  status        UserStatus @default(PENDING_VERIFICATION)
+  emailVerified DateTime?
+  image         String?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  attempts      ExamAttempt[]
+  payments      Payment[]
+  sessions      Session[]
+  accounts      Account[]
+
+  @@index([email])
+  @@index([username])
+  @@index([role])
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+model ExamCategory {
+  id          String   @id @default(cuid())
+  name        String
+  description String?
+  icon        String?
+  sortOrder   Int      @default(0)
+  status      ExamCategoryStatus @default(ACTIVE)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  exams       Exam[]
+
+  @@index([status, sortOrder])
+}
+
+model Exam {
+  id              String      @id @default(cuid())
+  title           String
+  description     String?
+  categoryId      String
+  difficulty      String      @default("MEDIUM") // EASY, MEDIUM, HARD
+  durationMinutes Int
+  passingScore    Int         @default(60)
+  maxAttempts     Int         @default(4)
+  status          ExamStatus  @default(DRAFT)
+  shuffleQuestions Boolean    @default(true)
+  shuffleOptions   Boolean    @default(true)
+  showResults     Boolean     @default(true)
+  twoAttemptPrice Int?        // null = use global setting
+  fourAttemptPrice Int?       // null = use global setting
+  enableTimer     Boolean     @default(true)
+  showCorrectAnswers Boolean @default(false)
+  showScoreImmediately Boolean @default(true)
+  allowReview     Boolean     @default(true)
+  createdAt       DateTime    @default(now())
+  updatedAt       DateTime    @updatedAt
+
+  category        ExamCategory @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  questions       Question[]
+  attempts        ExamAttempt[]
+
+  @@index([categoryId, status])
+  @@index([status])
+}
+
+model Question {
+  id            String       @id @default(cuid())
+  examId        String
+  type          QuestionType
+  text          String
+  explanation   String?
+  image         String?
+  points        Int          @default(1)
+  order         Int          @default(0)
+  createdAt     DateTime     @default(now())
+  updatedAt     DateTime     @updatedAt
+
+  exam          Exam         @relation(fields: [examId], references: [id], onDelete: Cascade)
+  options       QuestionOption[]
+  answers       StudentAnswer[]
+
+  @@index([examId, order])
+}
+
+model QuestionOption {
+  id         String     @id @default(cuid())
+  questionId String
+  text       String
+  isCorrect  Boolean    @default(false)
+  order      Int        @default(0)
+
+  question   Question   @relation(fields: [questionId], references: [id], onDelete: Cascade)
+
+  @@index([questionId])
+}
+
+model ExamAttempt {
+  id                    String        @id @default(cuid())
+  userId                String
+  examId                String
+  status                AttemptStatus @default(IN_PROGRESS)
+  startedAt             DateTime      @default(now())
+  submittedAt           DateTime?
+  timeRemaining         Int?
+  currentQuestionIndex  Int           @default(0)
+  score                 Float?
+  totalPoints           Int?
+  earnedPoints          Float?
+  percentage            Float?
+  passed                Boolean?
+  flaggedQuestions      Json          @default("[]")
+  answers               Json?         // Store current answers as JSON for auto-save
+  createdAt             DateTime      @default(now())
+  updatedAt             DateTime      @updatedAt
+
+  user                  User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  exam                  Exam          @relation(fields: [examId], references: [id], onDelete: Cascade)
+  studentAnswers        StudentAnswer[]
+
+  @@index([userId, examId])
+  @@index([userId, status])
+  @@index([examId, status])
+}
+
+model StudentAnswer {
+  id           String   @id @default(cuid())
+  attemptId    String
+  questionId   String
+  answer       Json     // Flexible: string, string[], number based on question type
+  isCorrect    Boolean?
+  pointsEarned Float?
+  timeSpent    Int?     // seconds
+  flagged      Boolean  @default(false)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  attempt      ExamAttempt @relation(fields: [attemptId], references: [id], onDelete: Cascade)
+  question     Question    @relation(fields: [questionId], references: [id], onDelete: Cascade)
+
+  @@unique([attemptId, questionId])
+  @@index([attemptId])
+}
+
+model Payment {
+  id              String        @id @default(cuid())
+  userId          String
+  package         PaymentPackage
+  amount          Int           // in cents
+  currency        String        @default("usd")
+  status          PaymentStatus @default(PENDING)
+  attemptsGranted Int           @default(0)
+  attemptsUsed    Int           @default(0)
+  adminNotes      String?
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+
+  user            User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, status])
+}
+
+model AdminSettings {
+  id                    String   @id @default("singleton")
+  twoAttemptPrice       Int      @default(2900) // $29.00 in cents
+  fourAttemptPrice      Int      @default(4900) // $49.00 in cents
+  whatsappNumber        String?
+  whatsappEnabled       Boolean  @default(true)
+  whatsappMessage       String?  // Pre-filled message when opening WhatsApp
+  siteNameEn            String   @default("Al-Najah")
+  siteNameAr            String   @default("النجاح")
+  supportEmail          String   @default("support@al-najah.com")
+  maintenanceMode       Boolean  @default(false)
+  loginMethod           String   @default("email") // "email" | "username" | "both"
+  updatedAt             DateTime @updatedAt
+}
+
+model PasswordReset {
+  id        String   @id @default(cuid())
+  email     String
+  token     String   @unique
+  expiresAt DateTime
+  used      Boolean  @default(false)
+  createdAt DateTime @default(now())
+
+  @@index([email])
+  @@index([token])
+}
+
+model AuditLog {
+  id        String   @id @default(cuid())
+  userId    String?
+  action    String
+  entity    String
+  entityId  String?
+  oldData   Json?
+  newData   Json?
+  ipAddress String?
+  userAgent String?
+  createdAt DateTime @default(now())
+
+  @@index([userId, createdAt])
+  @@index([entity, entityId])
+}

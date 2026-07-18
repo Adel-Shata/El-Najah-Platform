@@ -1,0 +1,620 @@
+{
+  "brand": {
+    "name": "النجاح",
+    "tagline": "منصة التعليم والاختبارات"
+  },
+  "nav": {
+    "home": "الرئيسية",
+    "courses": "الدورات",
+    "exams": "الاختبارات",
+    "about": "من نحن",
+    "contact": "تواصل معنا",
+    "dashboard": "لوحة التحكم",
+    "signIn": "تسجيل الدخول",
+    "signUp": "إنشاء حساب",
+    "logOut": "تسجيل الخروج",
+    "profile": "الملف الشخصي",
+    "getStarted": "ابدأ مجاناً"
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "مصمم للطلاب الجادين",
+      "title": "أتقن موادك. تفوّق في اختباراتك.",
+      "subtitle": "تجمع لك منصة النجاح دورات منظمة، واختبارات تجريبية بوقت محدد، وتتبعاً دقيقاً للتقدم — لتدرس بتركيز وتقيس ما يهم فعلاً.",
+      "primaryCta": "ابدأ مجاناً",
+      "secondaryCta": "تصفح الدورات"
+    },
+    "features": {
+      "title": "كل ما تحتاجه للتعلّم والنجاح",
+      "subtitle": "صُمّم من قبل معلمين. بُني بالطريقة التي يدرس بها الطلاب فعلاً.",
+      "items": {
+        "courses": {
+          "title": "دورات منظمة",
+          "body": "دروس خطوة بخطوة في الرياضيات والعلوم واللغات والعلوم الإنسانية. مبنية حول منهجك، لا منهج عام."
+        },
+        "exams": {
+          "title": "اختبارات تجريبية بوقت محدد",
+          "body": "ظروف اختبار حقيقية مع تصحيح فوري، وحلول تفصيلية، وسجل درجات شخصي يُظهر أين تركّز بعد ذلك."
+        },
+        "tracking": {
+          "title": "تقدم يتراكم",
+          "body": "شاهد سلاسل الاستمرارية، والدقة حسب الموضوع، والوقت حتى الإتقان. لوحة التحكم تخبرك ماذا تدرس اليوم، لا ماذا فعلت الشهر الماضي."
+        },
+        "bilingual": {
+          "title": "عربي وإنجليزي",
+          "body": "كل دورة وكل اختبار وواجهة متاحة باللغتين مع دعم كامل للاتجاه من اليمين لليسار. بدّل في أي وقت."
+        }
+      }
+    },
+    "stats": {
+      "students": "متعلم نشط",
+      "courses": "دورة متاحة",
+      "exams": "اختبار تجريبي مُنجز",
+      "passRate": "معدل النجاح المتوسط"
+    },
+    "cta": {
+      "title": "جاهز للدراسة بذكاء أكبر؟",
+      "body": "أنشئ حساباً مجانياً في أقل من دقيقة. بدون بطاقة ائتمان.",
+      "button": "إنشاء حساب مجاني"
+    }
+  },
+  "courses": {
+    "title": "الدورات",
+    "subtitle": "تصفح الكتالوج الكامل في الرياضيات والعلوم واللغات والعلوم الإنسانية.",
+    "comingSoon": "كتالوج الدورات قادم قريباً",
+    "body": "نعمل على بناء مكتبة الدورات. عُد قريباً أو اشعرنا برغبتك في معرفة موعد الإطلاق.",
+    "notify": "أعلمني"
+  },
+  "exams": {
+    "title": "الاختبارات",
+    "subtitle": "تدرب في ظروف اختبار حقيقية مع تصحيح فوري.",
+    "comingSoon": "مكتبة الاختبارات قادمة قريباً",
+    "body": "نُحضّر اختبارات تجريبية بوقت محدد مع حلول تفصيلية. سنُعلمك عندما تكون جاهزة.",
+    "notify": "أعلمني",
+    "startExam": "ابدأ الاختبار",
+    "difficulty": {
+      "easy": "سهل",
+      "medium": "متوسط",
+      "hard": "صعب"
+    },
+    "meta": {
+      "minutes": "دقيقة",
+      "questions": "سؤال",
+      "toPass": "للنجاح",
+      "passing": "نجاح"
+    },
+    "pricing": {
+      "twoAttempts": "محاولة 2",
+      "fourAttempts": "محاولة 4",
+      "free": "مجاني"
+    }
+  },
+  "about": {
+    "title": "عن منصة النجاح",
+    "subtitle": "نبني أدوات تساعد الطلاب على التعلّم بقصد وإثباته.",
+    "mission": {
+      "title": "رسالتنا",
+      "body": "معظم منصات التعلّم تُحسّن وقت البقاء في الموقع. نحن نُحسّن الإتقان الفعلي. كل ميزة في النجاح موجودة للإجابة على سؤال واحد: هل يتحسن الطالب، وأين يجب أن يُركّز بعد ذلك؟"
+    },
+    "values": {
+      "title": "ماذا نؤمن به",
+      "items": {
+        "focus": {
+          "title": "التركيز لا الميزات",
+          "body": "مجموعة صغيرة من الأدوات المصممة جيداً تتفوق على مئة أداة نصف مبنية."
+        },
+        "evidence": {
+          "title": "الدليل لا الرأي",
+          "body": "تتبع للتقدم، لا انطباعات. إن لم تستطع قياسه، لن نُطلقه."
+        },
+        "respect": {
+          "title": "احترام الطالب",
+          "body": "لا إشعارات مُضللة، ولا فخاخ تفاعل. وقتك ملكك."
+        }
+      }
+    }
+  },
+  "contact": {
+    "title": "تواصل معنا",
+    "subtitle": "أسئلة، ملاحظات، أو أفكار شراكة — نحب أن نسمع منك.",
+    "form": {
+      "name": "الاسم",
+      "email": "البريد الإلكتروني",
+      "message": "الرسالة",
+      "send": "إرسال الرسالة",
+      "placeholder": {
+        "name": "اسمك",
+        "email": "you@example.com",
+        "message": "كيف يمكننا المساعدة؟"
+      }
+    },
+    "channels": {
+      "title": "طرق أخرى للتواصل",
+      "email": "البريد الإلكتروني",
+      "support": "ساعات الدعم"
+    }
+  },
+  "dashboard": {
+    "title": "لوحة التحكم",
+    "subtitle": "تتبع اختباراتك وتقدمك",
+    "welcome": "مرحباً بعودتك",
+    "pleaseLogin": "سجّل الدخول لعرض لوحة التحكم.",
+    "overview": "نظرة عامة",
+    "noExamsPurchased": "لم تشتري أي اختبارات بعد.",
+    "browseExamsToStart": "تصفح كتالوج اختباراتنا للبدء.",
+    "continueStudying": "تابع التعلّم",
+    "recentExams": "درجات الاختبارات الأخيرة",
+    "streak": "يوم متتالي",
+    "noActivity": "لا يوجد نشاط بعد — ابدأ دورتك الأولى لرؤية تقدمك هنا.",
+    "purchasedExams": "اختباراتك",
+    "attemptsLeft": "المحاولات المتبقية",
+    "avgScore": "متوسط الدرجات",
+    "attemptsCompleted": "مكتملة",
+    "totalPurchased": "مشتريات",
+    "attemptHistory": "سجل المحاولات",
+    "started": "بدأت",
+    "continue": "متابعة",
+    "downloadReport": "تحميل التقرير",
+    "stats": {
+      "purchased": "محاولات مشتراة",
+      "remaining": "متبقية",
+      "completed": "مكتملة",
+      "passRate": "معدل النجاح"
+    }
+  },
+  "footer": {
+    "rights": "جميع الحقوق محفوظة.",
+    "built": "بُني بعناية للطلاب في كل مكان."
+  },
+  "common": {
+    "language": "اللغة",
+    "english": "English",
+    "arabic": "العربية",
+    "theme": "المظهر"
+  },
+  "auth": {
+    "signin": {
+      "title": "مرحباً بعودتك",
+      "subtitle": "سجّل الدخول للوصول إلى اختباراتك ولوحة التحكم",
+      "email": "البريد الإلكتروني",
+      "password": "كلمة المرور",
+      "rememberMe": "تذكرني",
+      "forgotPassword": "نسيت كلمة المرور؟",
+      "signIn": "تسجيل الدخول",
+      "signingIn": "جاري تسجيل الدخول...",
+      "noAccount": "لا تملك حساباً؟",
+      "registerLink": "أنشئ واحداً",
+      "invalidCredentials": "بريد إلكتروني أو كلمة مرور غير صحيحة",
+      "username": "اسم المستخدم",
+      "usernamePlaceholder": "اسم_المستخدم",
+      "accountInactive": "حسابك غير نشط. يرجى التواصل مع الدعم.",
+      "emailPlaceholder": "you@example.com",
+      "passwordPlaceholder": "••••••••",
+      "fieldRequired": "هذا الحقل مطلوب"
+    },
+    "register": {
+      "title": "أنشئ حسابك",
+      "subtitle": "ابدأ رحلة التعلّم اليوم",
+      "name": "الاسم الكامل",
+      "email": "البريد الإلكتروني",
+      "username": "اسم المستخدم",
+      "usernamePlaceholder": "اسم_المستخدم",
+      "password": "كلمة المرور",
+      "confirmPassword": "تأكيد كلمة المرور",
+      "createAccount": "إنشاء الحساب",
+      "creatingAccount": "جاري إنشاء الحساب...",
+      "hasAccount": "تملك حساباً بالفعل؟",
+      "signInLink": "سجّل الدخول",
+      "namePlaceholder": "اسمك",
+      "emailPlaceholder": "you@example.com",
+      "passwordPlaceholder": "••••••••",
+      "confirmPlaceholder": "••••••••",
+      "fieldRequired": "هذا الحقل مطلوب",
+      "passwordMinLength": "كلمة المرور يجب أن تكون 8 أحرف على الأقل",
+      "passwordsDontMatch": "كلمات المرور غير متطابقة",
+      "emailTaken": "يوجد حساب بهذا البريد الإلكتروني بالفعل",
+      "emailAlreadyExists": "هذا البريد الإلكتروني مسجل بالفعل. يرجى تسجيل الدخول أو استخدام بريد آخر.",
+      "usernameAlreadyExists": "اسم المستخدم هذا مستخدم بالفعل. يرجى اختيار اسم آخر.",
+      "registrationFailed": "فشل التسجيل. يرجى المحاولة مرة أخرى.",
+      "usernameRequired": "اسم المستخدم مطلوب"
+    },
+    "forgotPassword": {
+      "title": "نسيت كلمة المرور",
+      "subtitle": "أدخل بريدك الإلكتروني وسنرسل لك رابط إعادة التعيين",
+      "email": "البريد الإلكتروني",
+      "emailPlaceholder": "you@example.com",
+      "emailRequired": "يرجى إدخال بريدك الإلكتروني",
+      "sendResetLink": "إرسال رابط إعادة التعيين",
+      "sending": "جاري الإرسال...",
+      "successTitle": "تحقق من بريدك الإلكتروني",
+      "successMessage": "إذا كان هناك حساب بهذا البريد، فقد أرسلنا رابط إعادة تعيين كلمة المرور.",
+      "error": "حدث خطأ ما. يرجى المحاولة مرة أخرى.",
+      "backToSignIn": "العودة لتسجيل الدخول"
+    },
+    "resetPassword": {
+      "title": "إعادة تعيين كلمة المرور",
+      "subtitle": "أدخل كلمة المرور الجديدة أدناه",
+      "newPassword": "كلمة المرور الجديدة",
+      "confirmPassword": "تأكيد كلمة المرور",
+      "passwordPlaceholder": "••••••••",
+      "confirmPlaceholder": "••••••••",
+      "resetPassword": "إعادة التعيين",
+      "resetting": "جاري إعادة التعيين...",
+      "successTitle": "تم إعادة التعيين",
+      "passwordMinLength": "كلمة المرور يجب أن تكون 8 أحرف على الأقل",
+      "passwordsDontMatch": "كلمات المرور غير متطابقة",
+      "invalidLink": "رابط غير صالح أو منتهي الصلاحية",
+      "requestNewLink": "طلب رابط جديد",
+      "error": "حدث خطأ ما. يرجى المحاولة مرة أخرى.",
+      "backToSignIn": "العودة لتسجيل الدخول"
+    }
+  },
+  "exam": {
+    "title": "اختبار",
+    "subtitle": "أجرِ اختبارك",
+    "question": "سؤال",
+    "timeRemaining": "الوقت المتبقي",
+    "onTrack": "على المسار",
+    "hurry": "أسرع!",
+    "progress": "التقدم",
+    "answered": "مُجيب عليها",
+    "flagged": "مُعلّمة",
+    "autoSaved": "تم الحفظ تلقائياً",
+    "autoSaving": "جاري الحفظ التلقائي...",
+    "autoSavePending": "في انتظار الحفظ التلقائي...",
+    "questionType": {
+      "mcq_single": "اختيار من متعدد (واحد)",
+      "mcq_multiple": "اختيار من متعدد (متعدد)",
+      "true_false": "صح / خطأ",
+      "short_answer": "إجابة قصيرة",
+      "numerical": "رقمية"
+    },
+    "shortAnswerPlaceholder": "اكتب إجابتك هنا...",
+    "numericalPlaceholder": "أدخل رقمًا...",
+    "questionTypeNotSupported": "نوع السؤال غير مدعوم",
+    "confirmSubmit": "إرسال الاختبار؟",
+    "confirmSubmitMessage": "هل أنت متأكد من الإرسال؟ لا يمكنك تغيير إجاباتك بعد الإرسال.",
+    "submitting": "جاري الإرسال...",
+    "submitExam": "إرسال الاختبار",
+    "confirmSubmitBtn": "نعم، أرسل",
+    "cancel": "إلغاء",
+    "previous": "السابق",
+    "next": "التالي",
+    "submitExamBtn": "إرسال الاختبار",
+    "examResults": "نتائج الاختبار",
+    "totalScore": "الدرجة الكلية",
+    "pointsEarned": "النقاط المحرزة",
+    "totalQuestions": "إجمالي الأسئلة",
+    "answeredCount": "مُجيب عليها",
+    "passed": "ناجح",
+    "failed": "راسب",
+    "correct": "صحيح",
+    "incorrect": "غير صحيح",
+    "explanation": "التفسير",
+    "yourAnswer": "إجابتك",
+    "correctAnswer": "الإجابة الصحيحة",
+    "noAnswer": "لم يتم تقديم إجابة",
+    "continue": "متابعة",
+    "backToDashboard": "العودة للوحة التحكم",
+    "exitExam": "الخروج من الاختبار",
+    "questionPalette": "لوحة الأسئلة",
+    "current": "الحالي",
+    "notAnswered": "لم يُجاب",
+    "flag": "تحديد للمراجعة",
+    "unflag": "إزالة التحديد",
+    "questionReview": "مراجعة الأسئلة",
+    "downloadReport": "تحميل التقرير",
+    "reportDownloadFailed": "فشل في تحميل التقرير. يرجى المحاولة مرة أخرى.",
+    "detail": {
+      "backToExams": "العودة للاختبارات",
+      "duration": "المدة",
+      "minutes": "دقيقة",
+      "questions": "الأسئلة",
+      "questionsCount": "سؤال",
+      "passingScore": "درجة النجاح",
+      "totalPoints": "إجمالي النقاط",
+      "points": "نقطة",
+      "startExam": "ابدأ الاختبار",
+      "resumeExam": "استئناف الاختبار",
+      "starting": "جاري التحميل...",
+      "inProgress": "لديك محاولة جارية",
+      "inProgressMessage": "اضغط استئناف لمتابعة المحاولة الحالية.",
+      "noQuestions": "هذا الاختبار ليس لديه أسئلة بعد.",
+      "startError": "فشل في بدء الاختبار. يرجى المحاولة مرة أخرى.",
+      "maxAttempts": "لقد وصلت إلى الحد الأقصى من المحاولات لهذا الاختبار.",
+      "pastAttempts": "المحاولات السابقة",
+      "attemptsRemaining": "المحاولات المتبقية",
+      "attemptsLeft": "متبقية",
+      "passed": "ناجح",
+      "failed": "راسب",
+      "difficulty": {
+        "easy": "سهل",
+        "medium": "متوسط",
+        "hard": "صعب"
+      }
+    }
+  },
+  "admin": {
+    "adminPanel": "لوحة الإدارة",
+    "managePlatform": "إدارة منصتك",
+    "dashboard": "لوحة تحكم المدير",
+    "dashboardSubtitle": "نظرة عامة على أداء المنصة",
+    "stats": {
+      "totalUsers": "إجمالي الطلاب",
+      "activeExams": "الاختبارات النشطة",
+      "passRate": "نسبة النجاح",
+      "revenue": "الإيرادات"
+    },
+    "vsLastMonth": "مقارنة بالشهر الماضي",
+    "quickActions": "إجراءات سريعة",
+    "actions": {
+      "newCategory": "فئة جديدة",
+      "newCategoryDesc": "إنشاء فئة اختبار جديدة",
+      "newExam": "اختبار جديد",
+      "newExamDesc": "إنشاء اختبار جديد",
+      "newQuestion": "سؤال جديد",
+      "newQuestionDesc": "إضافة سؤال إلى اختبار",
+      "settings": "الإعدادات",
+      "settingsDesc": "تكوين إعدادات المنصة"
+    },
+    "recentActivity": "النشاط الأخير",
+    "viewAll": "عرض الكل",
+    "noActivity": "لا يوجد نشاط حديث",
+    "newStudents": "الطلاب الجدد",
+    "noNewStudents": "لا يوجد طلاب جدد بعد",
+    "students": "الطلاب",
+    "categories": "الفئات",
+    "exams": "الاختبارات",
+    "questions": "الأسئلة",
+    "results": "النتائج",
+    "nav": {
+      "dashboard": "لوحة التحكم",
+      "categories": "الفئات",
+      "exams": "الاختبارات",
+      "questions": "الأسئلة",
+      "students": "الطلاب",
+      "results": "النتائج",
+      "settings": "الإعدادات"
+    },
+    "expandSidebar": "توسيع الشريط الجانبي",
+    "collapseSidebar": "طي الشريط الجانبي",
+    "closeSidebar": "إغلاق الشريط الجانبي",
+    "openSidebar": "فتح الشريط الجانبي",
+    "navigation": "تنقل الإدارة",
+    "signOut": "تسجيل الخروج",
+    "saving": "جارٍ الحفظ...",
+    "saved": "تم الحفظ!",
+    "saveSettings": "حفظ الإعدادات",
+    "enterWhatsAppFirst": "يرجى إدخال رقم واتساب أولاً",
+    "examsPage": {
+      "title": "الاختبارات",
+      "subtitle": "إنشاء وإدارة الاختبارات",
+      "newExam": "اختبار جديد",
+      "noExams": "لا يوجد اختبارات بعد. أنشئ واحداً للبدء.",
+      "questionsCount": "سؤال",
+      "attemptsCount": "محاولة",
+      "publish": "نشر",
+      "unpublish": "إلغاء النشر"
+    },
+    "examsNew": {
+      "backToExams": "العودة للاختبارات",
+      "title": "إنشاء اختبار جديد",
+      "subtitle": "املأ التفاصيل أدناه لإنشاء اختبار جديد"
+    },
+    "examsEdit": {
+      "backToExams": "العودة للاختبارات",
+      "title": "تعديل الاختبار",
+      "subtitle": "تحديث تفاصيل الاختبار أدناه"
+    },
+    "examForm": {
+      "tabs": {
+        "basic": "معلومات أساسية",
+        "pricing": "التسعير",
+        "options": "الخيارات",
+        "questions": "الأسئلة"
+      },
+      "basic": {
+        "title": "المعلومات الأساسية",
+        "examTitle": "عنوان الاختبار *",
+        "titlePlaceholder": "مثال: امتحان الرياضيات النهائي",
+        "description": "الوصف",
+        "descriptionPlaceholder": "وصف اختياري للامتحان...",
+        "category": "الفئة *",
+        "categoryPlaceholder": "اختر فئة...",
+        "difficulty": "المستوى *",
+        "duration": "المدة (دقيقة) *",
+        "passingScore": "درجة النجاح (%) *"
+      },
+      "difficulty": {
+        "easy": "سهل",
+        "medium": "متوسط",
+        "hard": "صعب"
+      },
+      "pricing": {
+        "title": "تسعير حزم المحاولات",
+        "description": "تجاوز الأسعار العامة لهذا الاختبار. اتركه فارغاً لاستخدام الإعدادات العامة",
+        "twoAttempts": "سعر حزمة المحاولتين (سنت)",
+        "fourAttempts": "سعر حزمة أربع محاولات (سنت)",
+        "global": "عام",
+        "notSet": "غير محدد"
+      },
+      "options": {
+        "title": "خيارات الاختبار",
+        "enableTimer": "تفعيل المؤقت",
+        "enableTimerDesc": "يظهر للطلاب مؤقت تنازلي أثناء الاختبار",
+        "shuffleQuestions": "ترتيب الأسئلة عشوائياً",
+        "shuffleQuestionsDesc": "تظهر الأسئلة بترتيب مختلف لكل طالب",
+        "shuffleOptions": "ترتيب الإجابات عشوائياً",
+        "shuffleOptionsDesc": "يتم خلط خيارات الإجابة لكل طالب",
+        "showCorrectAnswers": "عرض الإجابات الصحيحة بعد التسليم",
+        "showCorrectAnswersDesc": "يمكن للطلاب رؤية الإجابات الصحيحة",
+        "showScore": "عرض الدرجة فوراً",
+        "showScoreDesc": "عرض الدرجة مباشرة بعد التسليم",
+        "allowReview": "السماح بمراجعة الإجابات بعد التسليم",
+        "allowReviewDesc": "يمكن للطلاب مراجعة إجاباتهم بعد التسليم"
+      },
+      "questions": {
+        "title": "الأسئلة",
+        "totalPoints": "الإجمالي: {count} سؤال · {points} نقطة",
+        "fromBank": "من البنك",
+        "newQuestion": "سؤال جديد",
+        "noQuestions": "لا توجد أسئلة بعد",
+        "noQuestionsDesc": "انقر \"سؤال جديد\" لإضافة أسئلة أو \"من البنك\" لاستيراد أسئلة موجودة.",
+        "untitled": "سؤال بدون عنوان",
+        "points": "نقطة",
+        "pointsMultiple": "نقاط",
+        "optionsCount": "خيارات",
+        "edit": "تعديل",
+        "close": "إغلاق",
+        "text": "نص السؤال *",
+        "textPlaceholder": "أدخل نص السؤال...",
+        "explanation": "التفسير",
+        "explanationPlaceholder": "تفسير اختياري يظهر بعد التسليم...",
+        "pointsLabel": "النقاط *",
+        "image": "صورة السؤال (اختياري)",
+        "imageAlt": "معاينة صورة السؤال",
+        "uploadClick": "انقر للرفع",
+        "uploadDrag": "أو اسحب وأفلت",
+        "uploadFormats": "JPG, PNG, WEBP (حد أقصى 5 ميجا)",
+        "answerOptions": "خيارات الإجابة",
+        "selectOne": "(اختر واحداً)",
+        "selectMultiple": "(اختر كل ما ينطبق)",
+        "addOption": "إضافة خيار",
+        "optionPlaceholder": "الخيار {n}",
+        "shortAnswerInfo": "سيكتب الطلاب إجابة نصية. ستقوم بتصحيحها يدوياً بعد التسليم.",
+        "numericalInfo": "سيدخل الطلاب إجابة رقمية. ستقوم بتصحيحها يدوياً بعد التسليم.",
+        "bankTitle": "بنك الأسئلة",
+        "bankSearch": "بحث في الأسئلة...",
+        "bankEmpty": "لم يتم العثور على أسئلة",
+        "bankAdd": "إضافة"
+      },
+      "questionTypes": {
+        "MCQ_SINGLE": "اختيار متعدد (اختيار واحد)",
+        "MCQ_MULTIPLE": "اختيار متعدد (اختيارات متعددة)",
+        "TRUE_FALSE": "صحيح / خطأ",
+        "SHORT_ANSWER": "إجابة قصيرة",
+        "NUMERICAL": "إجابة رقمية"
+      },
+      "validate": {
+        "titleRequired": "العنوان مطلوب",
+        "categoryRequired": "الفئة مطلوبة",
+        "durationMin": "يجب أن تكون المدة دقيقة واحدة على الأقل",
+        "passingScoreRange": "يجب أن تكون درجة النجاح بين 0 و 100",
+        "questionsRequired": "سؤال واحد على الأقل مطلوب",
+        "qTextRequired": "السؤال {n}: النص مطلوب",
+        "qPoints": "السؤال {n}: يجب أن تكون النقاط واحدة على الأقل",
+        "qOptions": "السؤال {n}: خياران على الأقل مطلوبان",
+        "qOptionsText": "السؤال {n}: جميع نصوص الخيارات مطلوبة",
+        "qCorrectSingle": "السؤال {n}: اختر إجابة صحيحة",
+        "qCorrectMultiple": "السؤال {n}: اختر إجابة صحيحة واحدة على الأقل"
+      },
+      "actions": {
+        "cancel": "إلغاء",
+        "saveDraft": "حفظ كمسودة",
+        "publish": "نشر الاختبار"
+      }
+    },
+    "categoriesPage": {
+      "title": "الفئات",
+      "subtitle": "إدارة فئات الاختبارات",
+      "newCategory": "فئة جديدة",
+      "name": "الاسم",
+      "description": "الوصف",
+      "createCategory": "إنشاء فئة",
+      "noCategories": "لا توجد فئات بعد. أنشئ واحدة أعلاه.",
+      "examsCount": "اختبار",
+      "toggleStatus": "تبديل"
+    },
+    "questionsPage": {
+      "title": "الأسئلة",
+      "subtitle": "إدارة أسئلة الاختبارات",
+      "all": "الكل",
+      "noQuestions": "لا توجد أسئلة بعد.",
+      "noQuestionsDesc": "أنشئ الاختبارات أولاً، ثم أضف الأسئلة عبر صفحة تعديل الاختبار.",
+      "manageQuestions": "إدارة الأسئلة",
+      "pts": "نقطة",
+      "optionsCount": "خيارات",
+      "answersCount": "إجابات",
+      "typeLabels": {
+        "MCQ_SINGLE": "اختيار متعدد (واحد)",
+        "MCQ_MULTIPLE": "اختيار متعدد (متعدد)",
+        "TRUE_FALSE": "صحيح/خطأ",
+        "SHORT_ANSWER": "إجابة قصيرة",
+        "NUMERICAL": "رقمية"
+      }
+    },
+    "studentsPage": {
+      "title": "الطلاب",
+      "registeredStudents": "{count} طالب مسجل",
+      "noStudents": "لا يوجد طلاب مسجلين بعد.",
+      "student": "الطالب",
+      "email": "البريد الإلكتروني",
+      "username": "اسم المستخدم",
+      "password": "كلمة المرور",
+      "hasPassword": "تم التعيين",
+      "noPassword": "بدون",
+      "joined": "تاريخ التسجيل",
+      "attempts": "المحاولات",
+      "payments": "المدفوعات",
+      "status": "الحالة",
+      "activity": "النشاط",
+      "online": "متصل",
+      "offline": "غير متصل",
+      "actions": "الإجراءات",
+      "unnamed": "بدون اسم",
+      "suspend": "إيقاف",
+      "activate": "تفعيل"
+    },
+    "resultsPage": {
+      "title": "النتائج",
+      "subtitle": "عرض جميع نتائج الاختبارات",
+      "totalAttempts": "إجمالي المحاولات",
+      "graded": "تم التصحيح",
+      "passed": "ناجح",
+      "inProgress": "قيد التنفيذ",
+      "noResults": "لا توجد نتائج اختبارات بعد.",
+      "student": "الطالب",
+      "exam": "الاختبار",
+      "status": "الحالة",
+      "score": "الدرجة",
+      "result": "النتيجة",
+      "date": "التاريخ"
+    },
+    "settings": {
+      "title": "الإعدادات",
+      "subtitle": "إدارة إعدادات المنصة",
+      "pricing": {
+        "title": "التسعير",
+        "twoAttempts": "سعر حزمة المحاولتين",
+        "fourAttempts": "سعر حزمة أربع محاولات",
+        "inCents": "السعر بالسنت (مثال: 2900 = $29.00)"
+      },
+      "whatsapp": {
+        "title": "تكامل واتساب",
+        "enabled": "تفعيل واتساب",
+        "active": "نشط",
+        "number": "رقم واتساب",
+        "numberDesc": "شمل رمز الدولة (مثال: +1234567890)",
+        "message": "الرسالة المسبقة",
+        "messagePlaceholder": "مرحباً، أحتاج مساعدة في...",
+        "messageDesc": "ستظهر هذه الرسالة مسبقة عند فتح الطلاب لواتساب",
+        "test": "إرسال رسالة تجريبية"
+      },
+      "general": {
+        "title": "عام",
+        "siteNameEn": "اسم الموقع (إنجليزي)",
+        "siteNameAr": "اسم الموقع (عربي)",
+        "supportEmail": "بريد الدعم",
+        "maintenanceMode": "وضع الصيانة"
+      },
+      "loginMethod": {
+        "title": "طريقة تسجيل الدخول",
+        "description": "اختر كيفية تسجيل دخول الطلاب إلى المنصة",
+        "email": "البريد الإلكتروني",
+        "username": "اسم المستخدم",
+        "both": "كلاهما",
+        "usernameWarning": "يجب على المستخدمين اختيار اسم مستخدم عند التسجيل. يمكن للمستخدمين الحاليين تسجيل الدخول بريدهم الإلكتروني حتى يقموا بتعيين اسم مستخدم."
+      }
+    }
+  }
+}
