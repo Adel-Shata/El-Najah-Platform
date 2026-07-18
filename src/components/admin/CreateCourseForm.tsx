@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
 import { FadeIn } from "@/components/motion";
 import { Save, X, Plus, Trash2 } from "lucide-react";
@@ -64,8 +64,7 @@ export function CreateCourseForm({ locale }: CreateCourseFormProps) {
       });
 
       if (res.ok) {
-        router.push(`/${locale}/admin/courses`);
-        router.refresh();
+        router.push("/admin/courses");
       }
     } catch (err) {
       console.error("Failed to create course:", err);
@@ -210,7 +209,7 @@ export function CreateCourseForm({ locale }: CreateCourseFormProps) {
       <div className="flex gap-3 mt-6 justify-end">
         <button
           type="button"
-          onClick={() => router.push(`/${locale}/admin/courses`)}
+          onClick={() => router.push("/admin/courses")}
           className="px-4 py-2 rounded-lg border border-border text-sm font-medium text-text-muted hover:bg-bg transition-colors"
         >
           {t("actions.cancel")}
