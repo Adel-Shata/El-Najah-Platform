@@ -718,7 +718,7 @@
         "youtubeUrl": "رابط يوتيوب",
         "youtubeUrlPlaceholder": "https://www.youtube.com/watch?v=...",
         "or": "أو",
-        "autoDetected": "تم اكتشاف المدة: {duration}",
+        "autoDetected": "تم اكتشاف المدة تلقائياً من يوتيوب",
         "totalDuration": "المدة الإجمالية",
         "uploading": "جارٍ التحميل..."
       },

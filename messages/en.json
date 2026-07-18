@@ -668,7 +668,7 @@
         "youtubeUrl": "YouTube URL",
         "youtubeUrlPlaceholder": "https://www.youtube.com/watch?v=...",
         "or": "or",
-        "autoDetected": "Duration detected: {duration}",
+        "autoDetected": "Duration auto-detected from YouTube",
         "totalDuration": "Total Duration",
         "uploading": "Uploading..."
       },
