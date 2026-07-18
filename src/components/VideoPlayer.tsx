@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 interface VideoPlayerProps {
   src?: string;
@@ -18,6 +18,8 @@ function extractYouTubeId(url: string): string | null {
 
 /* ── YouTube player ── */
 function YouTubePlayer({ videoId, title }: { videoId: string; title?: string }) {
+  const [loadError, setLoadError] = useState(false);
+
   return (
     <div style={{ marginBottom: "2rem", width: "100%" }}>
       <div
@@ -27,11 +29,12 @@ function YouTubePlayer({ videoId, title }: { videoId: string; title?: string }) 
           paddingBottom: "56.25%",
           borderRadius: "1rem",
           overflow: "hidden",
+          background: "#000",
           border: "1px solid var(--border, #e5e5e5)",
         }}
       >
         <iframe
-          src={`https://www.youtube.com/embed/${videoId}?controls=1`}
+          src={`https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=0&controls=1`}
           style={{
             position: "absolute",
             top: 0,
@@ -43,7 +46,25 @@ function YouTubePlayer({ videoId, title }: { videoId: string; title?: string }) 
           title={title || "YouTube video"}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowFullScreen
+          onLoad={() => {}}
+          onError={() => setLoadError(true)}
         />
+        {loadError && (
+          <div
+            style={{
+              position: "absolute",
+              inset: 0,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              color: "#fff",
+              fontSize: "14px",
+              background: "#000",
+            }}
+          >
+            Failed to load video.
+          </div>
+        )}
       </div>
     </div>
   );
@@ -60,14 +81,12 @@ function UploadedVideoPlayer({ src, poster }: { src: string; poster?: string }) 
     let cancelled = false;
 
     async function init() {
-      // Load Plyr CSS
       if (!document.querySelector('link[href*="plyr.io"]')) {
         const link = document.createElement("link");
         link.rel = "stylesheet";
         link.href = "https://cdn.plyr.io/3.7.8/plyr.css";
         document.head.appendChild(link);
       }
-      // Load Plyr JS
       if (!(window as any).Plyr) {
         await new Promise<void>((resolve) => {
           const existing = document.querySelector('script[src*="plyr.io"]');
