@@ -263,9 +263,9 @@ model AdminSettings {
   whatsappNumber        String?
   whatsappEnabled       Boolean  @default(true)
   whatsappMessage       String?  // Pre-filled message when opening WhatsApp
-  siteNameEn            String   @default("Al-Najah")
+  siteNameEn            String   @default("El-Najah")
   siteNameAr            String   @default("النجاح")
-  supportEmail          String   @default("support@al-najah.com")
+  supportEmail          String   @default("support@el-najah.com")
   maintenanceMode       Boolean  @default(false)
   loginMethod           String   @default("email") // "email" | "username" | "both"
   updatedAt             DateTime @updatedAt

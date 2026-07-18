@@ -150,7 +150,7 @@ export async function generateExamReportPDF(data: ExamReportData): Promise<Uint8
           totalPoints: "Total Points",
           passingScore: "Passing Score",
           generatedOn: "Generated on",
-          footer: "This report was automatically generated from Al-Najah Platform",
+          footer: "This report was automatically generated from El-Najah Platform",
           questionReview: "Question Review",
           question: "Question",
           yourAnswer: "Your Answer",
@@ -193,7 +193,7 @@ export async function generateExamReportPDF(data: ExamReportData): Promise<Uint8
     color: COLORS.primary,
   });
 
-  drawText("Al-Najah", margin + 20, y + 50, { font: boldFont, size: 28, color: COLORS.white });
+  drawText("El-Najah", margin + 20, y + 50, { font: boldFont, size: 28, color: COLORS.white });
   drawText(t.reportTitle, margin + 20, y + 20, { font: regularFont, size: 14, color: COLORS.white });
   drawText(
     `${t.generatedOn} ${formatDate(new Date().toISOString(), locale)}`,

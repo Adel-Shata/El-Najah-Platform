@@ -66,11 +66,11 @@ export async function POST(req: Request) {
     // When login method is username (not both), email is auto-generated as placeholder
     const isPlaceholderEmail = loginMethod === "username";
     const finalEmail = isPlaceholderEmail
-      ? `${username || name.toLowerCase().replace(/\s+/g, ".")}@al-najah.local`
+      ? `${username || name.toLowerCase().replace(/\s+/g, ".")}@el-najah.local`
       : email;
 
     // Check email uniqueness (skip for placeholder emails)
-    if (!finalEmail.endsWith("@al-najah.local")) {
+    if (!finalEmail.endsWith("@el-najah.local")) {
       const existing = await prisma.user.findUnique({ where: { email: finalEmail } });
       if (existing) {
         return NextResponse.json(

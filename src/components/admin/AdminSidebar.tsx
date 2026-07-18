@@ -65,7 +65,7 @@ export function AdminSidebar() {
                   <path d="M9 22V10h2.6l3.4 7.2L18.4 10H21v12h-2v-7.6L16.2 20h-2.4L11 14.4V22H9z" fill="currentColor" />
                 </svg>
               </div>
-              <span className="font-semibold text-text">Al-Najah</span>
+              <span className="font-semibold text-text">El-Najah</span>
             </Link>
           )}
           <div className="flex items-center gap-2">

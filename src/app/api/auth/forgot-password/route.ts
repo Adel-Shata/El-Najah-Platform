@@ -47,7 +47,7 @@ export async function POST(req: Request) {
     const resetUrl = `${process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000"}/en/auth/reset-password?token=${token}`;
     const emailResult = await sendEmail({
       to: email,
-      subject: "Reset Your Password - Al-Najah Platform",
+      subject: "Reset Your Password - El-Najah Platform",
       html: passwordResetEmail(user.name, resetUrl),
     });
 

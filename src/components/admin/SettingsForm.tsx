@@ -35,9 +35,9 @@ export function SettingsForm({ locale, initialSettings }: SettingsFormProps) {
     whatsappNumber: initialSettings?.whatsappNumber || "",
     whatsappEnabled: initialSettings?.whatsappEnabled ?? true,
     whatsappMessage: initialSettings?.whatsappMessage || "",
-    siteNameEn: initialSettings?.siteNameEn || "Al-Najah",
+    siteNameEn: initialSettings?.siteNameEn || "El-Najah",
     siteNameAr: initialSettings?.siteNameAr || "النجاح",
-    supportEmail: initialSettings?.supportEmail || "support@al-najah.com",
+    supportEmail: initialSettings?.supportEmail || "support@el-najah.com",
     maintenanceMode: initialSettings?.maintenanceMode ?? false,
     loginMethod: initialSettings?.loginMethod ?? "email",
   });
@@ -306,7 +306,7 @@ export function SettingsForm({ locale, initialSettings }: SettingsFormProps) {
                 value={formData.siteNameEn}
                 onChange={(e) => handleChange("siteNameEn", e.target.value)}
                 className="w-full px-4 py-3 rounded-xl border border-border bg-bg text-text placeholder:text-text-muted focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition"
-                placeholder="Al-Najah"
+                placeholder="El-Najah"
               />
             </div>
             <div>
@@ -326,7 +326,7 @@ export function SettingsForm({ locale, initialSettings }: SettingsFormProps) {
                 value={formData.supportEmail}
                 onChange={(e) => handleChange("supportEmail", e.target.value)}
                 className="w-full px-4 py-3 rounded-xl border border-border bg-bg text-text placeholder:text-text-muted focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition"
-                placeholder="support@al-najah.com"
+                placeholder="support@el-najah.com"
               />
             </div>
             <div className="flex items-center gap-3">

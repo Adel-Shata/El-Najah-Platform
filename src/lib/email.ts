@@ -17,7 +17,7 @@ interface SendEmailParams {
 export async function sendEmail({ to, subject, html }: SendEmailParams) {
   try {
     const info = await transporter.sendMail({
-      from: `"Al-Najah Platform" <${process.env.SMTP_USER}>`,
+      from: `"El-Najah Platform" <${process.env.SMTP_USER}>`,
       to,
       subject,
       html,
@@ -41,7 +41,7 @@ export function passwordResetEmail(name: string, resetUrl: string) {
     <body style="margin:0;padding:0;background-color:#f4f5f7;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">
       <div style="max-width:480px;margin:40px auto;background:#ffffff;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.08);">
         <div style="background:linear-gradient(135deg,#6366f1,#8b5cf6);padding:32px 24px;text-align:center;">
-          <h1 style="color:#ffffff;margin:0;font-size:24px;font-weight:600;">Al-Najah Platform</h1>
+          <h1 style="color:#ffffff;margin:0;font-size:24px;font-weight:600;">El-Najah Platform</h1>
         </div>
         <div style="padding:32px 24px;">
           <h2 style="color:#1a1a2e;margin:0 0 16px;font-size:20px;">Reset Your Password</h2>
@@ -74,7 +74,7 @@ export function passwordResetSuccessEmail(name: string) {
     <body style="margin:0;padding:0;background-color:#f4f5f7;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">
       <div style="max-width:480px;margin:40px auto;background:#ffffff;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.08);">
         <div style="background:linear-gradient(135deg,#6366f1,#8b5cf6);padding:32px 24px;text-align:center;">
-          <h1 style="color:#ffffff;margin:0;font-size:24px;font-weight:600;">Al-Najah Platform</h1>
+          <h1 style="color:#ffffff;margin:0;font-size:24px;font-weight:600;">El-Najah Platform</h1>
         </div>
         <div style="padding:32px 24px;">
           <h2 style="color:#1a1a2e;margin:0 0 16px;font-size:20px;">Password Updated</h2>

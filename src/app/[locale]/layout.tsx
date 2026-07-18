@@ -47,10 +47,10 @@ export async function generateMetadata({
   const isAr = locale === "ar";
   return {
     title: {
-      template: `%s | ${isAr ? "النجاح" : "Al-Najah"}`,
+      template: `%s | ${isAr ? "النجاح" : "El-Najah"}`,
       default: isAr
         ? "النجاح — منصة التعليم والاختبارات"
-        : "Al-Najah — Educational & Examination Platform",
+        : "El-Najah — Educational & Examination Platform",
     },
     description: isAr
       ? "منصة تجمع لك دورات منظمة واختبارات تجريبية بوقت محدد وتتبعاً للتقدم."

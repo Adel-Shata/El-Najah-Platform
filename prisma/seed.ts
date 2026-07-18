@@ -20,19 +20,19 @@ async function main() {
       twoAttemptPrice: 2900,
       fourAttemptPrice: 4900,
       whatsappEnabled: true,
-      siteNameEn: "Al-Najah",
+      siteNameEn: "El-Najah",
       siteNameAr: "النجاح",
-      supportEmail: "support@al-najah.com",
+      supportEmail: "support@el-najah.com",
       loginMethod: "email",
     },
   });
 
   const adminHash = await bcrypt.hash("Admin@123456", 12);
   await prisma.user.upsert({
-    where: { email: "admin@al-najah.com" },
+    where: { email: "admin@el-najah.com" },
     update: {},
     create: {
-      email: "admin@al-najah.com",
+      email: "admin@el-najah.com",
       name: "Admin",
       passwordHash: adminHash,
       role: "ADMIN",
@@ -42,10 +42,10 @@ async function main() {
 
   const studentHash = await bcrypt.hash("Student@123456", 12);
   await prisma.user.upsert({
-    where: { email: "student@al-najah.com" },
+    where: { email: "student@el-najah.com" },
     update: {},
     create: {
-      email: "student@al-najah.com",
+      email: "student@el-najah.com",
       name: "Student",
       passwordHash: studentHash,
       role: "STUDENT",

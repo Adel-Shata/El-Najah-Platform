@@ -5,7 +5,7 @@ import { FadeIn } from "@/components/motion";
 
 export const metadata = {
   title: "Sign up",
-  description: "Create your Al-Najah account",
+  description: "Create your El-Najah account",
 };
 
 export default async function SignUpPage({

@@ -83,7 +83,7 @@ export function SignUpForm() {
       try {
         const emailToSend = useEmail
           ? formData.email
-          : `${formData.username}@al-najah.local`;
+          : `${formData.username}@el-najah.local`;
 
         const res = await fetch("/api/auth/register", {
           method: "POST",

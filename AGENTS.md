@@ -4,7 +4,7 @@
 This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` before writing any code. Heed deprecation notices.
 <!-- END:nextjs-agent-rules -->
 
-# Al-Najah — Project Conventions
+# El-Najah — Project Conventions
 
 ## What this is
 A bilingual (Arabic + English) educational and examination platform.

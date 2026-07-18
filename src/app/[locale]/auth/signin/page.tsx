@@ -5,7 +5,7 @@ import { FadeIn } from "@/components/motion";
 
 export const metadata = {
   title: "Sign in",
-  description: "Sign in to your Al-Najah account",
+  description: "Sign in to your El-Najah account",
 };
 
 export default async function SignInPage({
@@ -43,7 +43,7 @@ export default async function SignInPage({
         </div>
 
         <FadeIn delay={0.3} className="mt-6 text-center text-sm text-text-muted">
-          <p>Demo: admin@al-najah.com / Admin@123456</p>
+          <p>Demo: admin@el-najah.com / Admin@123456</p>
         </FadeIn>
       </div>
     </div>

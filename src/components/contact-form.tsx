@@ -100,10 +100,10 @@ export function ContactChannels() {
         <div>
           <p className="text-sm font-medium text-text">{t("email")}</p>
           <a
-            href="mailto:hello@al-najah.example"
+            href="mailto:hello@el-najah.example"
             className="text-sm text-text-muted hover:text-text transition-colors"
           >
-            hello@al-najah.example
+            hello@el-najah.example
           </a>
         </div>
       </div>

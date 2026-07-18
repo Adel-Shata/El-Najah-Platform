@@ -1,6 +1,6 @@
 {
   "brand": {
-    "name": "Al-Najah",
+    "name": "El-Najah",
     "tagline": "Educational & Examination Platform"
   },
   "nav": {
@@ -20,7 +20,7 @@
     "hero": {
       "eyebrow": "Built for serious learners",
       "title": "Master your subjects. Ace your exams.",
-      "subtitle": "Al-Najah brings together structured courses, timed practice exams, and progress tracking — so you can study with focus and measure what matters.",
+      "subtitle": "El-Najah brings together structured courses, timed practice exams, and progress tracking — so you can study with focus and measure what matters.",
       "primaryCta": "Start free",
       "secondaryCta": "Browse courses"
     },
@@ -90,11 +90,11 @@
     }
   },
   "about": {
-    "title": "About Al-Najah",
+    "title": "About El-Najah",
     "subtitle": "We build tools that help students learn deliberately and prove it.",
     "mission": {
       "title": "Our mission",
-      "body": "Most learning platforms optimize for time-on-site. We optimize for actual mastery. Every feature in Al-Najah exists to answer one question: is the student getting better, and where should they focus next?"
+      "body": "Most learning platforms optimize for time-on-site. We optimize for actual mastery. Every feature in El-Najah exists to answer one question: is the student getting better, and where should they focus next?"
     },
     "values": {
       "title": "What we believe",

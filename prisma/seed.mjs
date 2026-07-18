@@ -9,7 +9,7 @@ async function main() {
   const hash = await bcrypt.hash("Admin@123456", 12);
   const admin = await prisma.user.create({
     data: {
-      email: "admin@al-najah.com",
+      email: "admin@el-najah.com",
       name: "Admin",
       passwordHash: hash,
       role: "ADMIN",
@@ -21,7 +21,7 @@ async function main() {
   const studentHash = await bcrypt.hash("Student@123456", 12);
   const student = await prisma.user.create({
     data: {
-      email: "student@al-najah.com",
+      email: "student@el-najah.com",
       name: "Student",
       passwordHash: studentHash,
       role: "STUDENT",

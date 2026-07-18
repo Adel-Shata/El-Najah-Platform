@@ -58,7 +58,7 @@ export async function POST(req: Request) {
     if (user) {
       await sendEmail({
         to: resetToken.email,
-        subject: "Password Changed - Al-Najah Platform",
+        subject: "Password Changed - El-Najah Platform",
         html: passwordResetSuccessEmail(user.name),
       });
     }

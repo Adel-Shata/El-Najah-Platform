@@ -5,7 +5,7 @@ import { FadeIn } from "@/components/motion";
 
 export const metadata = {
   title: "Reset Password",
-  description: "Set your new Al-Najah password",
+  description: "Set your new El-Najah password",
 };
 
 export default async function ResetPasswordPage({
