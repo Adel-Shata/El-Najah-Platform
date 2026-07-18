@@ -24,16 +24,18 @@ export default function VideoPlayer({ src, type, poster, title }: VideoPlayerPro
   if (type === "youtube" && src) {
     const videoId = extractYouTubeId(src);
     if (!videoId) return null;
+    const embedUrl = `https://www.youtube.com/embed/${videoId}`;
     return (
-      <div className="mb-8 relative w-full" style={{ paddingTop: "56.25%" }}>
-        <iframe
-          src={`https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1&controls=1&fs=1&iv_load_policy=3&cc_load_policy=1&playsinline=1`}
-          className="absolute inset-0 w-full h-full rounded-2xl border border-border"
-          style={{ border: 0 }}
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowFullScreen
-          title={title || "YouTube video"}
-        />
+      <div className="mb-8">
+        <div style={{ position: "relative", paddingBottom: "56.25%", height: 0, overflow: "hidden", borderRadius: "1rem" }}>
+          <iframe
+            src={embedUrl}
+            style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", border: 0 }}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+            title={title || "YouTube video"}
+          />
+        </div>
       </div>
     );
   }
