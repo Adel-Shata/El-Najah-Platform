@@ -25,7 +25,6 @@ export default async function ExamsPage({
     publishedExams = await prisma.exam.findMany({
       where: { status: "PUBLISHED" },
       include: {
-        category: { select: { name: true } },
         _count: { select: { questions: true } },
       },
       orderBy: { createdAt: "desc" },
@@ -38,18 +37,6 @@ export default async function ExamsPage({
     where: { id: "singleton" },
     select: { twoAttemptPrice: true, fourAttemptPrice: true },
   });
-
-  const difficultyColors: Record<string, string> = {
-    EASY: "bg-emerald-100 text-emerald-700",
-    MEDIUM: "bg-amber-100 text-amber-700",
-    HARD: "bg-red-100 text-red-700",
-  };
-
-  const difficultyLabels: Record<string, string> = {
-    EASY: t("difficulty.easy"),
-    MEDIUM: t("difficulty.medium"),
-    HARD: t("difficulty.hard"),
-  };
 
   return (
     <section className="container-app py-24 md:py-32">
@@ -89,20 +76,6 @@ export default async function ExamsPage({
                   className="flex flex-col rounded-2xl border border-border bg-surface hover:shadow-lg transition-shadow"
                 >
                   <div className="p-6 flex-1 flex flex-col">
-                    {/* Category & Difficulty */}
-                    <div className="flex items-center gap-2 mb-3">
-                      <span className="px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary/10 text-primary">
-                        {exam.category.name}
-                      </span>
-                      <span
-                        className={`px-2.5 py-0.5 rounded-full text-xs font-medium ${
-                          difficultyColors[exam.difficulty] || "bg-gray-100 text-gray-600"
-                        }`}
-                      >
-                        {difficultyLabels[exam.difficulty] || exam.difficulty}
-                      </span>
-                    </div>
-
                     {/* Title */}
                     <h3 className="text-lg font-semibold text-text leading-snug">
                       {exam.title}

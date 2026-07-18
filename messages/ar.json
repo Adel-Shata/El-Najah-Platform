@@ -81,11 +81,6 @@
     "body": "نُحضّر اختبارات تجريبية بوقت محدد مع حلول تفصيلية. سنُعلمك عندما تكون جاهزة.",
     "notify": "أعلمني",
     "startExam": "ابدأ الاختبار",
-    "difficulty": {
-      "easy": "سهل",
-      "medium": "متوسط",
-      "hard": "صعب"
-    },
     "meta": {
       "minutes": "دقيقة",
       "questions": "سؤال",
@@ -335,12 +330,7 @@
       "attemptsRemaining": "المحاولات المتبقية",
       "attemptsLeft": "متبقية",
       "passed": "ناجح",
-      "failed": "راسب",
-      "difficulty": {
-        "easy": "سهل",
-        "medium": "متوسط",
-        "hard": "صعب"
-      }
+      "failed": "راسب"
     }
   },
   "admin": {
@@ -357,8 +347,8 @@
     "vsLastMonth": "مقارنة بالشهر الماضي",
     "quickActions": "إجراءات سريعة",
     "actions": {
-      "newCategory": "فئة جديدة",
-      "newCategoryDesc": "إنشاء فئة اختبار جديدة",
+      "newCourse": "مقرر جديد",
+      "newCourseDesc": "إنشاء مقرر جديد",
       "newExam": "اختبار جديد",
       "newExamDesc": "إنشاء اختبار جديد",
       "newQuestion": "سؤال جديد",
@@ -372,13 +362,11 @@
     "newStudents": "الطلاب الجدد",
     "noNewStudents": "لا يوجد طلاب جدد بعد",
     "students": "الطلاب",
-    "categories": "الفئات",
     "exams": "الاختبارات",
     "questions": "الأسئلة",
     "results": "النتائج",
     "nav": {
       "dashboard": "لوحة التحكم",
-      "categories": "الفئات",
       "courses": "المقررات",
       "exams": "الاختبارات",
       "questions": "الأسئلة",
@@ -504,16 +492,8 @@
         "titlePlaceholder": "مثال: امتحان الرياضيات النهائي",
         "description": "الوصف",
         "descriptionPlaceholder": "وصف اختياري للامتحان...",
-        "category": "الفئة *",
-        "categoryPlaceholder": "اختر فئة...",
-        "difficulty": "المستوى *",
         "duration": "المدة (دقيقة) *",
         "passingScore": "درجة النجاح (%) *"
-      },
-      "difficulty": {
-        "easy": "سهل",
-        "medium": "متوسط",
-        "hard": "صعب"
       },
       "pricing": {
         "title": "تسعير حزم المحاولات",
@@ -582,7 +562,6 @@
       },
       "validate": {
         "titleRequired": "العنوان مطلوب",
-        "categoryRequired": "الفئة مطلوبة",
         "durationMin": "يجب أن تكون المدة دقيقة واحدة على الأقل",
         "passingScoreRange": "يجب أن تكون درجة النجاح بين 0 و 100",
         "questionsRequired": "سؤال واحد على الأقل مطلوب",
@@ -598,17 +577,6 @@
         "saveDraft": "حفظ كمسودة",
         "publish": "نشر الاختبار"
       }
-    },
-    "categoriesPage": {
-      "title": "الفئات",
-      "subtitle": "إدارة فئات الاختبارات",
-      "newCategory": "فئة جديدة",
-      "name": "الاسم",
-      "description": "الوصف",
-      "createCategory": "إنشاء فئة",
-      "noCategories": "لا توجد فئات بعد. أنشئ واحدة أعلاه.",
-      "examsCount": "اختبار",
-      "toggleStatus": "تبديل"
     },
     "questionsPage": {
       "title": "الأسئلة",

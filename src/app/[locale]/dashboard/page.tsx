@@ -34,7 +34,6 @@ export default async function StudentDashboardPage({
   let exams: Array<{
     id: string;
     title: string;
-    category: string;
     exam: { durationMinutes: number; passingScore: number; maxAttempts: number };
     granted: number;
     used: number;
@@ -71,7 +70,6 @@ export default async function StudentDashboardPage({
               durationMinutes: true,
               passingScore: true,
               maxAttempts: true,
-              category: { select: { name: true } },
             },
           },
         },
@@ -85,7 +83,6 @@ export default async function StudentDashboardPage({
       {
         id: string;
         title: string;
-        category: string;
         exam: { durationMinutes: number; passingScore: number; maxAttempts: number };
         granted: number;
         used: number;
@@ -120,7 +117,6 @@ export default async function StudentDashboardPage({
         examMap.set(attempt.exam.id, {
           id: attempt.exam.id,
           title: attempt.exam.title,
-          category: attempt.exam.category.name,
           exam: {
             durationMinutes: attempt.exam.durationMinutes,
             passingScore: attempt.exam.passingScore,

@@ -23,7 +23,6 @@ export default async function ExamDetailPage({
     exam = await prisma.exam.findUnique({
       where: { id: examId },
       include: {
-        category: { select: { name: true } },
         questions: { select: { points: true } },
         _count: { select: { questions: true } },
       },
@@ -65,18 +64,6 @@ export default async function ExamDetailPage({
 
   const remainingAttempts = Math.max(0, exam.maxAttempts - completedAttempts);
 
-  const difficultyColors: Record<string, string> = {
-    EASY: "bg-emerald-100 text-emerald-700",
-    MEDIUM: "bg-amber-100 text-amber-700",
-    HARD: "bg-red-100 text-red-700",
-  };
-
-  const difficultyLabels: Record<string, string> = {
-    EASY: t("difficulty.easy"),
-    MEDIUM: t("difficulty.medium"),
-    HARD: t("difficulty.hard"),
-  };
-
   // Get past attempts
   let pastAttempts: any[] = [];
   try {
@@ -117,20 +104,6 @@ export default async function ExamDetailPage({
           {/* Exam Info Card */}
           <FadeIn>
             <div className="bg-surface rounded-2xl border border-border p-8">
-              {/* Category & Difficulty */}
-              <div className="flex items-center gap-2 mb-4">
-                <span className="px-3 py-1 rounded-full text-sm font-medium bg-primary/10 text-primary">
-                  {exam.category.name}
-                </span>
-                <span
-                  className={`px-3 py-1 rounded-full text-sm font-medium ${
-                    difficultyColors[exam.difficulty] || "bg-gray-100 text-gray-600"
-                  }`}
-                >
-                  {difficultyLabels[exam.difficulty] || exam.difficulty}
-                </span>
-              </div>
-
               {/* Title */}
               <h1 className="text-3xl font-bold text-text mb-3">{exam.title}</h1>
 

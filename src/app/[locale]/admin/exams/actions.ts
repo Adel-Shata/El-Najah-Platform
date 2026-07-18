@@ -23,8 +23,6 @@ interface CreateExamInput {
   locale: string;
   title: string;
   description?: string;
-  categoryId: string;
-  difficulty: string;
   durationMinutes: number;
   passingScore: number;
   twoAttemptPrice?: number | null;
@@ -50,7 +48,6 @@ export async function createExam(input: CreateExamInput) {
   if (user?.role !== "ADMIN") throw new Error("Forbidden");
 
   if (!input.title?.trim()) throw new Error("Title is required");
-  if (!input.categoryId) throw new Error("Category is required");
   if (input.durationMinutes < 1) throw new Error("Duration must be at least 1 minute");
   if (input.passingScore < 0 || input.passingScore > 100) throw new Error("Passing score must be between 0 and 100");
 
@@ -58,8 +55,6 @@ export async function createExam(input: CreateExamInput) {
     data: {
       title: input.title.trim(),
       description: input.description?.trim() || null,
-      categoryId: input.categoryId,
-      difficulty: input.difficulty,
       durationMinutes: input.durationMinutes,
       passingScore: input.passingScore,
       status: input.status,
@@ -103,17 +98,6 @@ export async function createExam(input: CreateExamInput) {
 
   revalidatePath(`/${input.locale}/admin/exams`);
   redirect(`/${input.locale}/admin/exams`);
-}
-
-export async function getCategories() {
-  try {
-    return await prisma.examCategory.findMany({
-      where: { status: "ACTIVE" },
-      orderBy: { sortOrder: "asc" },
-    });
-  } catch {
-    return [];
-  }
 }
 
 export async function getExistingQuestions() {
@@ -175,7 +159,6 @@ export async function updateExam(examId: string, input: CreateExamInput) {
   if (user?.role !== "ADMIN") throw new Error("Forbidden");
 
   if (!input.title?.trim()) throw new Error("Title is required");
-  if (!input.categoryId) throw new Error("Category is required");
   if (input.durationMinutes < 1) throw new Error("Duration must be at least 1 minute");
   if (input.passingScore < 0 || input.passingScore > 100) throw new Error("Passing score must be between 0 and 100");
 
@@ -184,8 +167,6 @@ export async function updateExam(examId: string, input: CreateExamInput) {
     data: {
       title: input.title.trim(),
       description: input.description?.trim() || null,
-      categoryId: input.categoryId,
-      difficulty: input.difficulty,
       durationMinutes: input.durationMinutes,
       passingScore: input.passingScore,
       status: input.status,

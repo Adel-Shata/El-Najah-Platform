@@ -20,11 +20,6 @@ import {
   ImageIcon,
 } from "lucide-react";
 
-interface Category {
-  id: string;
-  name: string;
-}
-
 interface GlobalPrices {
   twoAttemptPrice: number;
   fourAttemptPrice: number;
@@ -59,8 +54,6 @@ interface FormQuestion {
 interface FormData {
   title: string;
   description: string;
-  categoryId: string;
-  difficulty: string;
   durationMinutes: number;
   passingScore: number;
   twoAttemptPrice: string;
@@ -109,18 +102,10 @@ const QUESTION_TYPES = [
   "MCQ_SINGLE", "MCQ_MULTIPLE", "TRUE_FALSE", "SHORT_ANSWER", "NUMERICAL"
 ] as const;
 
-const DIFFICULTY_OPTIONS = [
-  { value: "EASY", color: "bg-emerald-100 text-emerald-700" },
-  { value: "MEDIUM", color: "bg-amber-100 text-amber-700" },
-  { value: "HARD", color: "bg-red-100 text-red-700" },
-] as const;
-
 interface ExamData {
   id: string;
   title: string;
   description: string | null;
-  categoryId: string;
-  difficulty: string;
   durationMinutes: number;
   passingScore: number;
   twoAttemptPrice: number | null;
@@ -150,7 +135,6 @@ interface ExamData {
 
 interface CreateExamFormProps {
   locale: "en" | "ar";
-  categories: Category[];
   globalPrices: GlobalPrices | null;
   existingQuestions: ExistingQuestion[];
   exam?: ExamData;
@@ -158,7 +142,6 @@ interface CreateExamFormProps {
 
 export function CreateExamForm({
   locale,
-  categories,
   globalPrices,
   existingQuestions,
   exam,
@@ -173,8 +156,6 @@ export function CreateExamForm({
   const [form, setForm] = useState<FormData>({
     title: exam?.title ?? "",
     description: exam?.description ?? "",
-    categoryId: exam?.categoryId ?? "",
-    difficulty: exam?.difficulty ?? "MEDIUM",
     durationMinutes: exam?.durationMinutes ?? 60,
     passingScore: exam?.passingScore ?? 60,
     twoAttemptPrice: exam?.twoAttemptPrice != null ? String(exam.twoAttemptPrice) : "",
@@ -235,7 +216,6 @@ export function CreateExamForm({
   function validate(): boolean {
     const e: Record<string, string> = {};
     if (!form.title.trim()) e.title = t("validate.titleRequired");
-    if (!form.categoryId) e.categoryId = t("validate.categoryRequired");
     if (form.durationMinutes < 1) e.durationMinutes = t("validate.durationMin");
     if (form.passingScore < 0 || form.passingScore > 100) e.passingScore = t("validate.passingScoreRange");
     if (questions.length === 0) e.questions = t("validate.questionsRequired");
@@ -267,8 +247,6 @@ export function CreateExamForm({
         locale,
         title: form.title,
         description: form.description || undefined,
-        categoryId: form.categoryId,
-        difficulty: form.difficulty,
         durationMinutes: form.durationMinutes,
         passingScore: form.passingScore,
         twoAttemptPrice: form.twoAttemptPrice ? Number(form.twoAttemptPrice) : null,
@@ -485,40 +463,6 @@ export function CreateExamForm({
                   className={cn(inputClass, "resize-none")}
                   placeholder={t("basic.descriptionPlaceholder")}
                 />
-              </div>
-              <div>
-                <label className={labelClass}>{t("basic.category")}</label>
-                <select
-                  value={form.categoryId}
-                  onChange={(e) => updateForm("categoryId", e.target.value)}
-                  className={cn(inputClass, !form.categoryId && "text-text-muted", errors.categoryId && "border-red-500")}
-                >
-                  <option value="">{t("basic.categoryPlaceholder")}</option>
-                  {categories.map((c) => (
-                    <option key={c.id} value={c.id}>{c.name}</option>
-                  ))}
-                </select>
-                {errors.categoryId && <p className="mt-1 text-sm text-red-500">{errors.categoryId}</p>}
-              </div>
-              <div>
-                <label className={labelClass}>{t("basic.difficulty")}</label>
-                <div className="flex gap-2">
-                  {DIFFICULTY_OPTIONS.map((d) => (
-                    <button
-                      key={d.value}
-                      type="button"
-                      onClick={() => updateForm("difficulty", d.value)}
-                      className={cn(
-                        "flex-1 px-3 py-2.5 rounded-xl border text-sm font-medium transition-colors",
-                        form.difficulty === d.value
-                          ? d.color + " border-current"
-                          : "border-border text-text-muted hover:border-primary/30"
-                      )}
-                    >
-                      {t(`difficulty.${d.value.toLowerCase()}`)}
-                    </button>
-                  ))}
-                </div>
               </div>
               <div>
                 <label className={labelClass}>{t("basic.duration")}</label>

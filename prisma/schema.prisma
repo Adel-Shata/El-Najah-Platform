@@ -17,11 +17,6 @@ enum UserStatus {
   PENDING_VERIFICATION
 }
 
-enum ExamCategoryStatus {
-  ACTIVE
-  INACTIVE
-}
-
 enum ExamStatus {
   DRAFT
   PUBLISHED
@@ -115,27 +110,10 @@ model VerificationToken {
   @@unique([identifier, token])
 }
 
-model ExamCategory {
-  id          String   @id @default(cuid())
-  name        String
-  description String?
-  icon        String?
-  sortOrder   Int      @default(0)
-  status      ExamCategoryStatus @default(ACTIVE)
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-
-  exams       Exam[]
-
-  @@index([status, sortOrder])
-}
-
 model Exam {
   id              String      @id @default(cuid())
   title           String
   description     String?
-  categoryId      String
-  difficulty      String      @default("MEDIUM") // EASY, MEDIUM, HARD
   durationMinutes Int
   passingScore    Int         @default(60)
   maxAttempts     Int         @default(4)
@@ -152,11 +130,9 @@ model Exam {
   createdAt       DateTime    @default(now())
   updatedAt       DateTime    @updatedAt
 
-  category        ExamCategory @relation(fields: [categoryId], references: [id], onDelete: Cascade)
   questions       Question[]
   attempts        ExamAttempt[]
 
-  @@index([categoryId, status])
   @@index([status])
 }
 
@@ -283,18 +259,23 @@ model PasswordReset {
   @@index([token])
 }
 
+enum CourseCategoryStatus {
+  ACTIVE
+  INACTIVE
+}
+
 model CourseCategory {
   id          String   @id @default(cuid())
   name        String
   description String?
-  status      ExamCategoryStatus @default(ACTIVE)
+  status      CourseCategoryStatus @default(ACTIVE)
   sortOrder   Int      @default(0)
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 
   courses     Course[]
 
-  @@index([status, sortOrder])
+  @@index([sortOrder])
 }
 
 model Course {

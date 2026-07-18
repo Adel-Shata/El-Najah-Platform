@@ -25,7 +25,6 @@ export default async function EditExamPage({
   const t = await getTranslations({ locale, namespace: "admin.examsEdit" });
 
   let exam: any = null;
-  let categories: any[] = [];
   let globalPrices: { twoAttemptPrice: number; fourAttemptPrice: number } | null = null;
   let existingQuestions: any[] = [];
 
@@ -50,11 +49,7 @@ export default async function EditExamPage({
   if (!exam) notFound();
 
   try {
-    [categories, globalPrices, existingQuestions] = await Promise.all([
-      prisma.examCategory.findMany({
-        where: { status: "ACTIVE" },
-        orderBy: { sortOrder: "asc" },
-      }),
+    [globalPrices, existingQuestions] = await Promise.all([
       prisma.adminSettings.findUnique({
         where: { id: "singleton" },
         select: { twoAttemptPrice: true, fourAttemptPrice: true },
@@ -94,7 +89,6 @@ export default async function EditExamPage({
 
       <CreateExamForm
         locale={locale as "en" | "ar"}
-        categories={categories}
         globalPrices={globalPrices}
         existingQuestions={existingQuestions}
         exam={exam}

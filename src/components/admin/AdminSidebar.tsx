@@ -4,7 +4,6 @@ import { usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
 import {
   LayoutDashboard,
-  FolderKanban,
   FileText,
   BookOpen,
   HelpCircle,
@@ -23,7 +22,6 @@ import { signOut } from "next-auth/react";
 
 const navigation = [
   { name: "nav.dashboard", href: "/admin", icon: LayoutDashboard },
-  { name: "nav.categories", href: "/admin/categories", icon: FolderKanban },
   { name: "nav.courses", href: "/admin/courses", icon: BookOpen },
   { name: "nav.exams", href: "/admin/exams", icon: FileText },
   { name: "nav.questions", href: "/admin/questions", icon: HelpCircle },

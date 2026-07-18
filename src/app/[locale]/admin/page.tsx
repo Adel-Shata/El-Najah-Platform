@@ -33,15 +33,13 @@ export default async function AdminDashboardPage({
   const [
     totalUsers,
     totalExams,
-    ,
-    ,
+    totalAttempts,
     completedAttempts,
     passedAttempts,
     totalRevenue,
   ] = await Promise.all([
     prisma.user.count({ where: { role: "STUDENT" } }),
     prisma.exam.count({ where: { status: "PUBLISHED" } }),
-    prisma.examCategory.count({ where: { status: "ACTIVE" } }),
     prisma.examAttempt.count(),
     prisma.examAttempt.count({ where: { status: "GRADED" } }),
     prisma.examAttempt.count({ where: { status: "GRADED", passed: true } }),
@@ -158,22 +156,6 @@ export default async function AdminDashboardPage({
             <h2 className="text-xl font-semibold text-text mb-4">{t("quickActions")}</h2>
             <div className="grid gap-3 sm:grid-cols-2">
               <a
-                href={`/${locale}/admin/categories/new`}
-                className="p-4 rounded-xl border border-border bg-bg hover:bg-bg/80 hover:border-primary/50 transition-colors text-left"
-              >
-                <div className="flex items-center gap-3">
-                  <div className="p-2 rounded-lg bg-primary/10 text-primary">
-                    <svg className="size-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
-                    </svg>
-                  </div>
-                  <div>
-                    <p className="font-medium text-text">{t("actions.newCategory")}</p>
-                    <p className="text-sm text-text-muted">{t("actions.newCategoryDesc")}</p>
-                  </div>
-                </div>
-              </a>
-              <a
                 href={`/${locale}/admin/exams/new`}
                 className="p-4 rounded-xl border border-border bg-bg hover:bg-bg/80 hover:border-primary/50 transition-colors text-left"
               >
@@ -186,6 +168,22 @@ export default async function AdminDashboardPage({
                   <div>
                     <p className="font-medium text-text">{t("actions.newExam")}</p>
                     <p className="text-sm text-text-muted">{t("actions.newExamDesc")}</p>
+                  </div>
+                </div>
+              </a>
+              <a
+                href={`/${locale}/admin/courses/new`}
+                className="p-4 rounded-xl border border-border bg-bg hover:bg-bg/80 hover:border-primary/50 transition-colors text-left"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="p-2 rounded-lg bg-primary/10 text-primary">
+                    <svg className="size-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-medium text-text">{t("actions.newCourse")}</p>
+                    <p className="text-sm text-text-muted">{t("actions.newCourseDesc")}</p>
                   </div>
                 </div>
               </a>

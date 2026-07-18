@@ -43,7 +43,6 @@ export default async function AdminExamsPage({
   try {
     exams = await prisma.exam.findMany({
       include: {
-        category: { select: { name: true } },
         _count: { select: { questions: true, attempts: true } },
       },
       orderBy: { createdAt: "desc" },
@@ -81,7 +80,7 @@ export default async function AdminExamsPage({
                   <div className="min-w-0">
                     <p className="font-medium text-text truncate">{exam.title}</p>
                     <p className="text-sm text-text-muted truncate">
-                      {exam.category.name} · {exam.durationMinutes}min · {exam._count.questions} {t("questionsCount")} · {exam._count.attempts} {t("attemptsCount")}
+                      {exam.durationMinutes}min · {exam._count.questions} {t("questionsCount")} · {exam._count.attempts} {t("attemptsCount")}
                     </p>
                   </div>
                 </div>

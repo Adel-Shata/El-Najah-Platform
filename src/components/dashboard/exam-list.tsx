@@ -27,7 +27,6 @@ interface Attempt {
 interface Exam {
   id: string;
   title: string;
-  category: string;
   exam: {
     durationMinutes: number;
     passingScore: number;
@@ -101,7 +100,6 @@ export function ExamList({ locale, exams }: ExamListProps) {
                         </div>
                         <div>
                           <h3 className="font-semibold text-text truncate">{exam.title}</h3>
-                          <p className="text-sm text-text-muted">{exam.category}</p>
                         </div>
                       </div>
                     </div>

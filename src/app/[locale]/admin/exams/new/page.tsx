@@ -24,16 +24,11 @@ export default async function NewExamPage({
 
   const t = await getTranslations({ locale, namespace: "admin.examsNew" });
 
-  let categories: any[] = [];
   let globalPrices: { twoAttemptPrice: number; fourAttemptPrice: number } | null = null;
   let existingQuestions: any[] = [];
 
   try {
-    [categories, globalPrices, existingQuestions] = await Promise.all([
-      prisma.examCategory.findMany({
-        where: { status: "ACTIVE" },
-        orderBy: { sortOrder: "asc" },
-      }),
+    [globalPrices, existingQuestions] = await Promise.all([
       prisma.adminSettings.findUnique({
         where: { id: "singleton" },
         select: { twoAttemptPrice: true, fourAttemptPrice: true },
@@ -73,7 +68,6 @@ export default async function NewExamPage({
 
       <CreateExamForm
         locale={locale as "en" | "ar"}
-        categories={categories}
         globalPrices={globalPrices}
         existingQuestions={existingQuestions}
       />
