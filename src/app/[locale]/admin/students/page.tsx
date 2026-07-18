@@ -6,6 +6,7 @@ import { FadeIn } from "@/components/motion";
 import { Users, Mail, Calendar, Ban, CheckCircle, Circle } from "lucide-react";
 import { format } from "date-fns";
 import { getTranslations } from "next-intl/server";
+import { DeleteStudentButton } from "@/components/admin/DeleteStudentButton";
 
 export default async function AdminStudentsPage({
   params,
@@ -30,6 +31,14 @@ export default async function AdminStudentsPage({
       where: { id: userId },
       data: { status: currentStatus === "ACTIVE" ? "SUSPENDED" : "ACTIVE" },
     });
+    revalidatePath(`/${locale}/admin/students`);
+  }
+
+  async function deleteStudent(formData: FormData) {
+    "use server";
+    const studentId = formData.get("studentId") as string;
+    if (!studentId) return;
+    await prisma.user.delete({ where: { id: studentId } });
     revalidatePath(`/${locale}/admin/students`);
   }
 
@@ -132,11 +141,18 @@ export default async function AdminStudentsPage({
                           </div>
                         </td>
                         <td className="px-4 py-3 text-right">
-                          <form action={toggleStudentStatus.bind(null, student.id, student.status)} className="inline-block">
-                            <button type="submit" className={`p-1.5 rounded-lg transition-colors ${student.status === "ACTIVE" ? "text-red-600 hover:bg-red-50" : "text-emerald-600 hover:bg-emerald-50"}`} title={student.status === "ACTIVE" ? t("suspend") : t("activate")}>
-                              {student.status === "ACTIVE" ? <Ban className="size-4" /> : <CheckCircle className="size-4" />}
-                            </button>
-                          </form>
+                          <div className="flex items-center justify-end gap-1">
+                            <form action={toggleStudentStatus.bind(null, student.id, student.status)} className="inline-block">
+                              <button type="submit" className={`p-1.5 rounded-lg transition-colors ${student.status === "ACTIVE" ? "text-red-600 hover:bg-red-50" : "text-emerald-600 hover:bg-emerald-50"}`} title={student.status === "ACTIVE" ? t("suspend") : t("activate")}>
+                                {student.status === "ACTIVE" ? <Ban className="size-4" /> : <CheckCircle className="size-4" />}
+                              </button>
+                            </form>
+                            <DeleteStudentButton
+                              studentId={student.id}
+                              studentName={student.name || student.email}
+                              onDelete={deleteStudent}
+                            />
+                          </div>
                         </td>
                       </tr>
                     );
